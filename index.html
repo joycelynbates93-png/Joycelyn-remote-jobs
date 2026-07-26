@@ -8,6 +8,10 @@
 
 <style>
 
+/* =========================================================
+   GENERAL PAGE STYLING
+========================================================= */
+
 * {
     box-sizing: border-box;
 }
@@ -23,18 +27,21 @@ body {
     color: #4a1834;
 
     background:
-        radial-gradient(circle at 10% 20%, rgba(255,255,255,.8) 0 2px, transparent 3px),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,.7) 0 2px, transparent 3px),
-        radial-gradient(circle at 40% 80%, rgba(255,255,255,.8) 0 2px, transparent 3px),
-        radial-gradient(circle at 90% 70%, rgba(255,255,255,.7) 0 2px, transparent 3px),
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,.9) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 80%, rgba(255,255,255,.9) 0 2px, transparent 3px),
+        radial-gradient(circle at 90% 70%, rgba(255,255,255,.8) 0 2px, transparent 3px),
         linear-gradient(135deg, #ffb6dc, #f783c4, #e85aa9, #ff9bd2);
 
-    background-size: 100px 100px, 150px 150px, 130px 130px, 170px 170px, cover;
+    background-size:
+        100px 100px,
+        150px 150px,
+        130px 130px,
+        170px 170px,
+        cover;
 
     padding: 30px 15px 60px;
 }
-
-/* MAIN PAGE */
 
 .page {
     width: 100%;
@@ -42,18 +49,20 @@ body {
     margin: auto;
 }
 
-/* HEADER */
+/* =========================================================
+   HEADER
+========================================================= */
 
 .hero {
     text-align: center;
-    background: rgba(255,255,255,.94);
+    background: rgba(255,255,255,.96);
     border: 3px solid #fff;
     border-radius: 30px;
-    padding: 35px 20px;
-    margin-bottom: 25px;
+    padding: 40px 20px;
+    margin-bottom: 20px;
 
     box-shadow:
-        0 10px 35px rgba(137, 25, 89, .25),
+        0 10px 35px rgba(137,25,89,.25),
         0 0 25px rgba(255,255,255,.8);
 }
 
@@ -73,14 +82,16 @@ body {
 }
 
 .hero p {
-    margin: 12px auto 0;
-    max-width: 700px;
+    margin: 15px auto 0;
+    max-width: 750px;
     color: #743957;
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* QUICK NAV */
+/* =========================================================
+   QUICK NAVIGATION
+========================================================= */
 
 .quick-nav {
     display: flex;
@@ -93,12 +104,14 @@ body {
 .quick-nav a {
     text-decoration: none;
     color: white;
-    background: linear-gradient(135deg, #d63384, #f06bb7);
-    padding: 11px 20px;
+    background: linear-gradient(135deg,#c21870,#f06bb7);
+    padding: 12px 20px;
     border-radius: 50px;
     font-weight: 700;
     font-size: 14px;
+
     box-shadow: 0 5px 12px rgba(150,30,100,.25);
+
     transition: .3s;
 }
 
@@ -107,46 +120,212 @@ body {
     box-shadow: 0 8px 18px rgba(150,30,100,.4);
 }
 
-/* SEARCH */
+/* =========================================================
+   FEATURED EMPLOYERS
+========================================================= */
+
+.featured-section {
+    background: rgba(255,255,255,.96);
+    border-radius: 25px;
+    padding: 25px;
+    margin: 25px 0;
+
+    box-shadow: 0 8px 25px rgba(120,30,80,.2);
+}
+
+.section-heading {
+    text-align: center;
+    color: #c21870;
+    margin-top: 0;
+    font-size: 26px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #8b5270;
+    margin-bottom: 22px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 15px;
+}
+
+.featured-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 18px;
+
+    background: linear-gradient(145deg,#fff5fa,#ffddec);
+
+    border: 2px solid #f5add0;
+
+    text-decoration: none;
+    color: #70184b;
+
+    transition: .3s;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(145deg,#d63384,#f06bb7);
+    color: white;
+
+    box-shadow: 0 10px 25px rgba(160,30,100,.3);
+}
+
+.featured-icon {
+    font-size: 28px;
+}
+
+.featured-card h3 {
+    margin: 8px 0;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
 
 .search-box {
     background: rgba(255,255,255,.96);
     padding: 25px;
     border-radius: 25px;
-    margin-bottom: 30px;
+    margin: 25px 0;
+
     box-shadow: 0 8px 25px rgba(120,30,80,.2);
+
     text-align: center;
 }
 
 .search-box h2 {
-    margin: 0 0 15px;
+    margin-top: 0;
     color: #c21870;
 }
 
 #companySearch {
     width: 100%;
     max-width: 650px;
+
     padding: 16px 20px;
+
     border: 3px solid #f3a2cc;
     border-radius: 50px;
+
     outline: none;
+
     font-size: 16px;
+
     color: #55213e;
+
     background: #fff8fc;
 }
 
 #companySearch:focus {
     border-color: #d63384;
-    box-shadow: 0 0 15px rgba(214,51,132,.25);
+
+    box-shadow:
+        0 0 15px rgba(214,51,132,.25);
 }
 
-/* CATEGORY */
+/* =========================================================
+   JOB CATEGORY FILTERS
+========================================================= */
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.filter-btn {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 50px;
+
+    background: #ffe1ef;
+
+    color: #a71962;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #d63384;
+    color: white;
+
+    box-shadow: 0 5px 12px rgba(150,30,100,.25);
+}
+
+/* =========================================================
+   QUICK RESOURCE CARDS
+========================================================= */
+
+.resources-section {
+    background: rgba(255,255,255,.96);
+    border-radius: 25px;
+    padding: 25px;
+    margin: 25px 0;
+
+    box-shadow: 0 8px 25px rgba(120,30,80,.2);
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 15px;
+}
+
+.resource-card {
+    background: #fff0f7;
+
+    border: 2px solid #f4b3d3;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    text-decoration: none;
+
+    color: #5b2141;
+
+    transition: .3s;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+
+    background: linear-gradient(145deg,#d63384,#f06bb7);
+
+    color: white;
+
+    box-shadow: 0 10px 20px rgba(160,30,100,.3);
+}
+
+.resource-card h3 {
+    margin-top: 0;
+}
+
+/* =========================================================
+   CATEGORY
+========================================================= */
 
 .category {
-    background: rgba(255,255,255,.95);
+    background: rgba(255,255,255,.96);
     border-radius: 25px;
     padding: 25px;
     margin-bottom: 30px;
+
     box-shadow: 0 8px 25px rgba(120,30,80,.2);
 }
 
@@ -165,20 +344,26 @@ body {
     margin-top: 5px;
 }
 
-/* COMPANY GRID */
+/* =========================================================
+   COMPANY CARDS
+========================================================= */
 
 .company-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+
     gap: 15px;
 }
 
-/* COMPANY CARD */
-
 .company-card {
     position: relative;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
 
     min-height: 125px;
@@ -186,33 +371,45 @@ body {
     padding: 18px;
 
     text-decoration: none;
+
     color: #54203c;
 
-    background: linear-gradient(145deg, #fff7fb, #ffe5f2);
+    background:
+        linear-gradient(145deg,#fff7fb,#ffe5f2);
 
     border: 2px solid #f7b4d4;
+
     border-radius: 18px;
 
     overflow: hidden;
 
     transition: all .3s ease;
 
-    box-shadow: 0 5px 12px rgba(160,40,100,.12);
+    box-shadow:
+        0 5px 12px rgba(160,40,100,.12);
 }
 
 .company-card::before {
     content: "✦";
+
     position: absolute;
+
     right: 12px;
+
     top: 8px;
+
     color: #e65ca8;
+
     font-size: 18px;
 }
 
 .company-card:hover {
-    transform: translateY(-6px) scale(1.02);
+    transform:
+        translateY(-6px)
+        scale(1.02);
 
-    background: linear-gradient(145deg, #d63384, #f06bb7);
+    background:
+        linear-gradient(145deg,#d63384,#f06bb7);
 
     border-color: white;
 
@@ -225,65 +422,339 @@ body {
 
 .company-number {
     font-size: 12px;
+
     color: #b04478;
+
     font-weight: 700;
 }
 
-.company-card:hover .company-number {
+.company-card:hover
+.company-number {
     color: #ffe7f5;
 }
 
 .company-name {
     font-size: 17px;
+
     font-weight: 800;
+
     margin: 7px 0;
 }
 
 .apply {
     font-size: 13px;
+
     font-weight: 700;
+
     color: #d63384;
 }
 
-.company-card:hover .apply {
+.company-card:hover
+.apply {
     color: white;
 }
 
-/* FOOTER */
+/* =========================================================
+   APPLICATION TRACKER
+========================================================= */
+
+.tracker-section {
+    background: rgba(255,255,255,.96);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    margin: 30px 0;
+
+    box-shadow:
+        0 8px 25px rgba(120,30,80,.2);
+}
+
+.tracker-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap: 10px;
+}
+
+.tracker-form input,
+.tracker-form select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    border: 2px solid #f2b2d2;
+
+    outline: none;
+
+    background: #fff9fc;
+}
+
+.tracker-form button {
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #d63384;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding: 12px;
+}
+
+.tracker-table {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    border-collapse: collapse;
+
+    overflow: hidden;
+}
+
+.tracker-table th,
+.tracker-table td {
+
+    padding: 12px;
+
+    border-bottom:
+        1px solid #f4c7dc;
+
+    text-align: left;
+}
+
+.tracker-table th {
+
+    background: #ffe2ef;
+
+    color: #a71962;
+}
+
+.delete-btn {
+
+    border: none;
+
+    background: #f8c5dc;
+
+    color: #8d164f;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+/* =========================================================
+   SCAM WARNING
+========================================================= */
+
+.scam-warning {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff2f8,
+            #ffe0ed
+        );
+
+    border:
+        3px solid #f09bc5;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    margin: 30px 0;
+
+    box-shadow:
+        0 8px 25px rgba(120,30,80,.15);
+}
+
+.scam-warning h2 {
+
+    color: #c21870;
+
+    text-align: center;
+}
+
+.scam-warning ul {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    line-height: 1.8;
+}
+
+/* =========================================================
+   ABOUT JOYCELYN
+========================================================= */
+
+.about-section {
+
+    background: rgba(255,255,255,.96);
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    margin: 30px 0;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(120,30,80,.2);
+}
+
+.about-section p {
+
+    max-width: 800px;
+
+    margin: 10px auto;
+
+    line-height: 1.8;
+
+    color: #66314d;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #d63384,
+            #f06bb7
+        );
+
+    color: white;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    margin: 30px 0;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px rgba(120,30,80,.25);
+}
+
+.contact-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.contact-buttons a {
+
+    text-decoration: none;
+
+    background: white;
+
+    color: #c21870;
+
+    padding: 12px 22px;
+
+    border-radius: 50px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.contact-buttons a:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 15px
+        rgba(80,0,50,.25);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer {
+
     text-align: center;
+
     color: white;
+
     padding: 30px 15px;
+
     font-size: 15px;
 }
 
 .footer strong {
+
     font-size: 20px;
 }
 
-/* BACK TO TOP */
+/* =========================================================
+   BACK TO TOP
+========================================================= */
 
 #topButton {
+
     position: fixed;
+
     bottom: 20px;
+
     right: 20px;
 
     width: 50px;
+
     height: 50px;
 
     border: none;
+
     border-radius: 50%;
 
-    background: linear-gradient(135deg, #c21870, #f06bb7);
+    background:
+        linear-gradient(
+            135deg,
+            #c21870,
+            #f06bb7
+        );
+
     color: white;
 
     font-size: 22px;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 5px 20px rgba(100,20,70,.35);
+    box-shadow:
+        0 5px 20px
+        rgba(100,20,70,.35);
 
     display: none;
 
@@ -291,39 +762,63 @@ body {
 }
 
 #topButton:hover {
-    transform: scale(1.1);
+
+    transform:
+        scale(1.1);
 }
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media (max-width: 600px) {
+@media(max-width:600px) {
 
     body {
-        padding: 15px 10px 50px;
+
+        padding:
+            15px
+            10px
+            50px;
     }
 
     .hero {
-        padding: 25px 15px;
+
+        padding:
+            25px
+            15px;
     }
 
     .hero h1 {
+
         font-size: 30px;
     }
 
     .hero p {
+
         font-size: 15px;
     }
 
-    .category {
+    .category,
+    .featured-section,
+    .resources-section,
+    .tracker-section {
+
         padding: 18px;
     }
 
     .company-grid {
+
         grid-template-columns: 1fr;
     }
 
     .company-card {
+
         min-height: 110px;
+    }
+
+    .tracker-table {
+
+        font-size: 13px;
     }
 
 }
@@ -336,23 +831,31 @@ body {
 
 <div class="page">
 
-<!-- HEADER -->
+
+<!-- =====================================================
+     MAIN HEADER
+===================================================== -->
 
 <section class="hero">
 
 <h1>Joycelyn's Work From Home Job Hub</h1>
 
 <p>
-Welcome to your one-stop destination for finding legitimate work-from-home opportunities!
-Browse trusted companies, explore career categories, and click any company below to visit their career page and apply directly.
+Welcome to your one-stop destination for discovering work-from-home career opportunities! 
+Browse trusted employers, explore job categories, find helpful career resources, 
+and keep track of the jobs you apply for—all in one place. 💕
 </p>
 
 </section>
 
 
-<!-- QUICK NAVIGATION -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav class="quick-nav">
+
+<a href="#featured">⭐ Featured Jobs</a>
 
 <a href="#bpo">📞 Customer Service</a>
 
@@ -360,34 +863,273 @@ Browse trusted companies, explore career categories, and click any company below
 
 <a href="#healthcare">🏥 Healthcare</a>
 
-<a href="#corporate">💼 Corporate & Tech</a>
+<a href="#corporate">💼 Corporate</a>
+
+<a href="#resources">📚 Resources</a>
+
+<a href="#tracker">📊 Application Tracker</a>
 
 </nav>
 
 
-<!-- SEARCH -->
+<!-- =====================================================
+     FEATURED EMPLOYERS
+===================================================== -->
 
-<section class="search-box">
+<section class="featured-section" id="featured">
 
-<h2>🔍 Find a Company</h2>
+<h2 class="section-heading">
+⭐ Featured Work From Home Employers
+</h2>
 
-<input
-type="text"
-id="companySearch"
-placeholder="Search for a company... Example: TTEC, CVS, Amazon"
-onkeyup="searchCompanies()"
->
+<p class="section-subtitle">
+Explore popular employers and visit their official career pages to view current opportunities.
+</p>
+
+<div class="featured-grid">
+
+<a class="featured-card"
+href="https://www.ttecjobs.com/en/work-from-home"
+target="_blank">
+
+<div class="featured-icon">📞</div>
+
+<h3>TTEC</h3>
+
+<p>Customer Experience & Support</p>
+
+</a>
+
+
+<a class="featured-card"
+href="https://vxi.com/careers/"
+target="_blank">
+
+<div class="featured-icon">💻</div>
+
+<h3>VXI Global</h3>
+
+<p>Customer Service & Support</p>
+
+</a>
+
+
+<a class="featured-card"
+href="https://jobs.cvshealth.com/us/en/search-results?keywords=Remote"
+target="_blank">
+
+<div class="featured-icon">🏥</div>
+
+<h3>CVS Health</h3>
+
+<p>Healthcare & Customer Care</p>
+
+</a>
+
+
+<a class="featured-card"
+href="https://www.amazon.jobs/en/locations/virtual-locations"
+target="_blank">
+
+<div class="featured-icon">📦</div>
+
+<h3>Amazon</h3>
+
+<p>Virtual & Corporate Roles</p>
+
+</a>
+
+
+<a class="featured-card"
+href="https://jobs.concentrix.com/job-search/?country=United+States+of+America&wah=1"
+target="_blank">
+
+<div class="featured-icon">🎧</div>
+
+<h3>Concentrix</h3>
+
+<p>Customer Experience</p>
+
+</a>
+
+
+<a class="featured-card"
+href="https://www.ttecjobs.com/en/work-from-home"
+target="_blank">
+
+<div class="featured-icon">💼</div>
+
+<h3>Remote Careers</h3>
+
+<p>Explore Work From Home Options</p>
+
+</a>
+
+</div>
 
 </section>
 
 
-<!-- BPO -->
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
-<section class="category" id="bpo">
+<section class="search-box">
+
+<h2>🔍 Search the Employer Directory</h2>
+
+<input
+type="text"
+id="companySearch"
+placeholder="Search companies like TTEC, CVS, Amazon..."
+onkeyup="searchCompanies()"
+>
+
+<div class="filter-buttons">
+
+<button class="filter-btn active"
+onclick="filterCategory('all',this)">
+All Companies
+</button>
+
+<button class="filter-btn"
+onclick="filterCategory('bpo',this)">
+Customer Service
+</button>
+
+<button class="filter-btn"
+onclick="filterCategory('contractor',this)">
+Flexible Work
+</button>
+
+<button class="filter-btn"
+onclick="filterCategory('healthcare',this)">
+Healthcare
+</button>
+
+<button class="filter-btn"
+onclick="filterCategory('corporate',this)">
+Corporate & Tech
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     RESOURCES
+===================================================== -->
+
+<section class="resources-section" id="resources">
+
+<h2 class="section-heading">
+📚 Work From Home Career Resources
+</h2>
+
+<p class="section-subtitle">
+Helpful resources to prepare for your next remote opportunity.
+</p>
+
+<div class="resource-grid">
+
+
+<a class="resource-card"
+href="https://www.usa.gov/resume"
+target="_blank">
+
+<h3>📝 Resume Help</h3>
+
+<p>
+Get help creating or improving your resume before applying.
+</p>
+
+</a>
+
+
+<a class="resource-card"
+href="https://www.dol.gov/general/topic/training"
+target="_blank">
+
+<h3>🎓 Career Training</h3>
+
+<p>
+Explore training and career development resources.
+</p>
+
+</a>
+
+
+<a class="resource-card"
+href="https://www.usa.gov/job-search"
+target="_blank">
+
+<h3>🔎 Job Search Help</h3>
+
+<p>
+Explore official job search resources and employment information.
+</p>
+
+</a>
+
+
+<a class="resource-card"
+href="https://www.ftc.gov/scams"
+target="_blank">
+
+<h3>🚨 Scam Awareness</h3>
+
+<p>
+Learn how to recognize and avoid common employment scams.
+</p>
+
+</a>
+
+
+<a class="resource-card"
+href="https://www.dol.gov/general/topic/youthlabor/workers"
+target="_blank">
+
+<h3>💼 Workplace Information</h3>
+
+<p>
+Learn more about workplace rights and employment resources.
+</p>
+
+</a>
+
+
+<a class="resource-card"
+href="https://www.usa.gov/job-training"
+target="_blank">
+
+<h3>💻 Job Skills</h3>
+
+<p>
+Explore resources that can help strengthen your career skills.
+</p>
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BPO DIRECTORY
+===================================================== -->
+
+<section class="category" id="bpo" data-category="bpo">
 
 <h2 class="category-title">
+
 📞 BPO & Customer Service
-<span>Customer support, call center, technical support, and contact center opportunities</span>
+
+<span>
+Customer support, call center, technical support, and contact center opportunities
+</span>
+
 </h2>
 
 <div class="company-grid">
@@ -399,13 +1141,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://teleperformance.searchgreatcareers.com/location/remote-jobs/41925/1000000000100/2" target="_blank">
 <span class="company-number">#2</span>
 <span class="company-name">Teleperformance</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://jobs.concentrix.com/job-search/?country=United+States+of+America&wah=1" target="_blank">
 <span class="company-number">#3</span>
@@ -413,13 +1153,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.foundever.com/content/Find-a-Job/" target="_blank">
 <span class="company-number">#4</span>
 <span class="company-name">Foundever</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://www.alorica.com/careers/" target="_blank">
 <span class="company-number">#5</span>
@@ -427,13 +1165,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.sutherlandglobal.com/" target="_blank">
 <span class="company-number">#6</span>
 <span class="company-name">Sutherland</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://vxi.com/careers/" target="_blank">
 <span class="company-number">#7</span>
@@ -441,13 +1177,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.conduent.com/customer-experience-management/work-at-home/" target="_blank">
 <span class="company-number">#8</span>
 <span class="company-name">Conduent</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://taskus.com/careers/" target="_blank">
 <span class="company-number">#9</span>
@@ -455,13 +1189,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.weareeverise.com/careers/" target="_blank">
 <span class="company-number">#10</span>
 <span class="company-name">Everise</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://www.qualfon.com/careers/" target="_blank">
 <span class="company-number">#11</span>
@@ -469,13 +1201,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://intouchcx.com/careers/" target="_blank">
 <span class="company-number">#12</span>
 <span class="company-name">IntouchCX</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://resultscx.com/careers/" target="_blank">
 <span class="company-number">#13</span>
@@ -483,13 +1213,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://probecx.com/careers/" target="_blank">
 <span class="company-number">#14</span>
 <span class="company-name">Probe CX</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://www.iqor.com/careers" target="_blank">
 <span class="company-number">#15</span>
@@ -497,13 +1225,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.firstsource.com/careers/" target="_blank">
 <span class="company-number">#16</span>
 <span class="company-name">Firstsource</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://www.exlservice.com/careers" target="_blank">
 <span class="company-number">#17</span>
@@ -511,20 +1237,17 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.genpact.com/careers" target="_blank">
 <span class="company-number">#18</span>
 <span class="company-name">Genpact</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.wns.com/careers" target="_blank">
 <span class="company-number">#19</span>
 <span class="company-name">WNS</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://maximus.com/careers" target="_blank">
 <span class="company-number">#20</span>
@@ -533,16 +1256,24 @@ onkeyup="searchCompanies()"
 </a>
 
 </div>
+
 </section>
 
 
-<!-- CONTRACTOR -->
+<!-- =====================================================
+     CONTRACTOR
+===================================================== -->
 
-<section class="category" id="contractor">
+<section class="category" id="contractor" data-category="contractor">
 
 <h2 class="category-title">
+
 💻 Contractor & Flexible Work
-<span>Flexible customer service and independent contractor opportunities</span>
+
+<span>
+Flexible customer service and independent contractor opportunities
+</span>
+
 </h2>
 
 <div class="company-grid">
@@ -554,13 +1285,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://join.liveops.com/opportunities/" target="_blank">
 <span class="company-number">#22</span>
 <span class="company-name">Liveops</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://www.ariseworkfromhome.com/" target="_blank">
 <span class="company-number">#23</span>
@@ -568,13 +1297,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://nexrep.com/apply/" target="_blank">
 <span class="company-number">#24</span>
 <span class="company-name">NexRep</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://omniinteractions.com/join/" target="_blank">
 <span class="company-number">#25</span>
@@ -582,13 +1309,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://broadpath.com/careers/" target="_blank">
 <span class="company-number">#26</span>
 <span class="company-name">BroadPath</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://careers.kellyocg.com/" target="_blank">
 <span class="company-number">#27</span>
@@ -597,16 +1322,24 @@ onkeyup="searchCompanies()"
 </a>
 
 </div>
+
 </section>
 
 
-<!-- HEALTHCARE -->
+<!-- =====================================================
+     HEALTHCARE
+===================================================== -->
 
-<section class="category" id="healthcare">
+<section class="category" id="healthcare" data-category="healthcare">
 
 <h2 class="category-title">
+
 🏥 Healthcare & Health Insurance
-<span>Healthcare, insurance, member services, scheduling, and support opportunities</span>
+
+<span>
+Healthcare, insurance, member services, scheduling, and support opportunities
+</span>
+
 </h2>
 
 <div class="company-grid">
@@ -618,13 +1351,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.thecignagroup.com/us/en/remote-jobs" target="_blank">
 <span class="company-number">#29</span>
 <span class="company-name">The Cigna Group</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://careers.unitedhealthgroup.com/location/remote-jobs/34088/1000000000100/2" target="_blank">
 <span class="company-number">#30</span>
@@ -632,13 +1363,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.optum.com/careers.html" target="_blank">
 <span class="company-number">#31</span>
 <span class="company-name">Optum</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://careers.humana.com/us/en/search-results?keywords=Remote" target="_blank">
 <span class="company-number">#32</span>
@@ -646,13 +1375,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://careers.elevancehealth.com/" target="_blank">
 <span class="company-number">#33</span>
 <span class="company-name">Elevance Health</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://careers.molinahealthcare.com/" target="_blank">
 <span class="company-number">#34</span>
@@ -660,13 +1387,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://r1rcm.com/careers/" target="_blank">
 <span class="company-number">#35</span>
 <span class="company-name">R1 RCM</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://sagilityhealth.com/careers/" target="_blank">
 <span class="company-number">#36</span>
@@ -674,13 +1399,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://pinsourcing.com/jobs/" target="_blank">
 <span class="company-number">#37</span>
 <span class="company-name">Pearl Interactive</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://jobs.centene.com/" target="_blank">
 <span class="company-number">#38</span>
@@ -688,13 +1411,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.cvshealth.com/us/en/search-results?keywords=Aetna+Remote" target="_blank">
 <span class="company-number">#39</span>
 <span class="company-name">Aetna</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://about.kaiserpermanente.org/careers" target="_blank">
 <span class="company-number">#40</span>
@@ -703,16 +1424,24 @@ onkeyup="searchCompanies()"
 </a>
 
 </div>
+
 </section>
 
 
-<!-- CORPORATE -->
+<!-- =====================================================
+     CORPORATE
+===================================================== -->
 
-<section class="category" id="corporate">
+<section class="category" id="corporate" data-category="corporate">
 
 <h2 class="category-title">
+
 💼 Corporate, Tech, Finance & Travel
-<span>Technology, banking, finance, travel, retail, and corporate career opportunities</span>
+
+<span>
+Technology, banking, finance, travel, retail, and corporate career opportunities
+</span>
+
 </h2>
 
 <div class="company-grid">
@@ -724,13 +1453,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.apple.com/en-us/search?team=home-advisor" target="_blank">
 <span class="company-number">#42</span>
 <span class="company-name">Apple</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://jobs.dell.com/remote-jobs" target="_blank">
 <span class="company-number">#43</span>
@@ -738,13 +1465,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://careers.microsoft.com/v2/global/en/home.html" target="_blank">
 <span class="company-number">#44</span>
 <span class="company-name">Microsoft</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://aexp.fourbusiness.com/careers" target="_blank">
 <span class="company-number">#45</span>
@@ -752,13 +1477,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.capitalonecareers.com/" target="_blank">
 <span class="company-number">#46</span>
 <span class="company-name">Capital One</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://careers.pnc.com/" target="_blank">
 <span class="company-number">#47</span>
@@ -766,13 +1489,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.wellsfargojobs.com/" target="_blank">
 <span class="company-number">#48</span>
 <span class="company-name">Wells Fargo</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://jobs.fidelity.com/" target="_blank">
 <span class="company-number">#49</span>
@@ -780,13 +1501,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.schwabjobs.com/" target="_blank">
 <span class="company-number">#50</span>
 <span class="company-name">Charles Schwab</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://www.telusdigital.com/careers" target="_blank">
 <span class="company-number">#51</span>
@@ -794,13 +1513,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.adp.com/" target="_blank">
 <span class="company-number">#52</span>
 <span class="company-name">ADP</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://aquent.com/find-work" target="_blank">
 <span class="company-number">#53</span>
@@ -808,13 +1525,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.roberthalf.com/us/en/jobs" target="_blank">
 <span class="company-number">#54</span>
 <span class="company-name">Robert Half</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://careers.united.com/" target="_blank">
 <span class="company-number">#55</span>
@@ -822,13 +1537,11 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.aa.com/" target="_blank">
 <span class="company-number">#56</span>
 <span class="company-name">American Airlines</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://careers.marriott.com/" target="_blank">
 <span class="company-number">#57</span>
@@ -836,20 +1549,17 @@ onkeyup="searchCompanies()"
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://jobs.hilton.com/" target="_blank">
 <span class="company-number">#58</span>
 <span class="company-name">Hilton</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
-
 <a class="company-card" href="https://www.chewy.com/jobs" target="_blank">
 <span class="company-number">#59</span>
 <span class="company-name">Chewy</span>
 <span class="apply">Apply Now ↗</span>
 </a>
-
 
 <a class="company-card" href="https://www.wayfair.com/careers" target="_blank">
 <span class="company-number">#60</span>
@@ -858,59 +1568,262 @@ onkeyup="searchCompanies()"
 </a>
 
 </div>
+
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     APPLICATION TRACKER
+===================================================== -->
 
-<footer class="footer">
+<section class="tracker-section" id="tracker">
 
-<strong>✨ Joycelyn's Work From Home Job Hub ✨</strong>
+<h2 class="section-heading">
+📊 My Job Application Tracker
+</h2>
 
-<p>
-Helping you discover work-from-home career opportunities in one convenient place. 💕
+<p class="section-subtitle">
+Keep track of the companies you've applied to and your application status.
 </p>
 
-<p>
-Always verify the job location, eligibility requirements, and employment status directly with the employer before applying.
-</p>
+<div class="tracker-form">
 
-</footer>
+<input
+type="text"
+id="trackerCompany"
+placeholder="Company Name"
+>
+
+<input
+type="text"
+id="trackerPosition"
+placeholder="Job Title"
+>
+
+<select id="trackerStatus">
+
+<option value="Applied">
+Applied
+</option>
+
+<option value="Interview">
+Interview
+</option>
+
+<option value="Assessment">
+Assessment
+</option>
+
+<option value="Offer">
+Offer
+</option>
+
+<option value="Rejected">
+Not Selected
+</option>
+
+</select>
+
+<button onclick="addApplication()">
+Add Application
+</button>
 
 </div>
 
 
-<!-- BACK TO TOP -->
+<table class="tracker-table">
 
-<button id="topButton" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+<thead>
+
+<tr>
+
+<th>Company</th>
+
+<th>Position</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="applicationList">
+
+</tbody>
+
+</table>
+
+</section>
+
+
+<!-- =====================================================
+     WORK FROM HOME SCAM WARNING
+===================================================== -->
+
+<section class="scam-warning">
+
+<h2>
+🚨 Protect Yourself From Work-From-Home Scams
+</h2>
+
+<ul>
+
+<li>Never pay someone to receive a job offer.</li>
+
+<li>Be cautious of employers requesting gift cards, cryptocurrency, or wire transfers.</li>
+
+<li>Verify that you are applying through the company's official career website.</li>
+
+<li>Be careful with recruiters who only communicate through messaging apps or personal email addresses.</li>
+
+<li>Never provide sensitive personal information until you have verified the employer.</li>
+
+<li>Research the company before accepting an offer.</li>
+
+</ul>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT JOYCELYN
+===================================================== -->
+
+<section class="about-section">
+
+<h2 class="section-heading">
+💕 About Joycelyn's Work From Home Job Hub
+</h2>
+
+<p>
+Welcome! I'm Joycelyn, and I created this Work From Home Job Hub to make it easier 
+for job seekers to find legitimate career opportunities in one convenient place.
+</p>
+
+<p>
+My goal is to help people discover employers, explore career options, prepare for interviews, 
+and stay organized throughout their job search.
+</p>
+
+<p>
+Remember to always review the official employer's website for the most current job openings, 
+location requirements, eligibility requirements, and application instructions.
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact-section">
+
+<h2>
+💌 Connect With Joycelyn
+</h2>
+
+<p>
+Have a question, suggestion, or want to share a work-from-home opportunity?
+</p>
+
+<div class="contact-buttons">
+
+<a href="mailto:joycelyncooper93@outlook.com">
+📧 Email Me
+</a>
+
+<a href="https://www.facebook.com/" target="_blank">
+📘 Facebook
+</a>
+
+<a href="https://www.instagram.com/" target="_blank">
+📸 Instagram
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<strong>
+✨ Joycelyn's Work From Home Job Hub ✨
+</strong>
+
+<p>
+Helping job seekers discover work-from-home career opportunities.
+</p>
+
+<p>
+© 2026 Joycelyn's Work From Home Job Hub. All rights reserved.
+</p>
+
+<p>
+<strong>Important:</strong>
+Job availability and remote-work eligibility can change.
+Always verify current openings and requirements directly with the employer.
+</p>
+
+</footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button
+id="topButton"
+onclick="window.scrollTo({top:0,behavior:'smooth'})"
+>
 ↑
 </button>
 
 
 <script>
 
-/* SEARCH COMPANIES */
+/* =========================================================
+   SEARCH COMPANIES
+========================================================= */
 
 function searchCompanies() {
 
-    let input = document
+    let input =
+        document
         .getElementById("companySearch")
         .value
         .toLowerCase();
 
-    let cards = document.querySelectorAll(".company-card");
+    let cards =
+        document
+        .querySelectorAll(".company-card");
 
     cards.forEach(function(card) {
 
-        let companyName = card
+        let companyName =
+            card
             .querySelector(".company-name")
             .textContent
             .toLowerCase();
 
-        if (companyName.includes(input)) {
+        if(companyName.includes(input)) {
+
             card.style.display = "flex";
+
         } else {
+
             card.style.display = "none";
+
         }
 
     });
@@ -918,22 +1831,158 @@ function searchCompanies() {
 }
 
 
-/* BACK TO TOP BUTTON */
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
 
-window.addEventListener("scroll", function() {
+function filterCategory(category, button) {
 
-    let button = document.getElementById("topButton");
+    let sections =
+        document
+        .querySelectorAll(".category");
 
-    if (window.scrollY > 400) {
-        button.style.display = "block";
-    } else {
-        button.style.display = "none";
+    let buttons =
+        document
+        .querySelectorAll(".filter-btn");
+
+    buttons.forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+
+    sections.forEach(function(section) {
+
+        if(category === "all") {
+
+            section.style.display = "block";
+
+        } else {
+
+            if(section.dataset.category === category) {
+
+                section.style.display = "block";
+
+            } else {
+
+                section.style.display = "none";
+
+            }
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   APPLICATION TRACKER
+========================================================= */
+
+function addApplication() {
+
+    let company =
+        document
+        .getElementById("trackerCompany")
+        .value;
+
+    let position =
+        document
+        .getElementById("trackerPosition")
+        .value;
+
+    let status =
+        document
+        .getElementById("trackerStatus")
+        .value;
+
+
+    if(company === "" || position === "") {
+
+        alert("Please enter the company and job title.");
+
+        return;
+
     }
 
-});
+
+    let table =
+        document
+        .getElementById("applicationList");
+
+
+    let row =
+        document
+        .createElement("tr");
+
+
+    row.innerHTML = `
+
+        <td>${company}</td>
+
+        <td>${position}</td>
+
+        <td>${status}</td>
+
+        <td>
+            <button
+            class="delete-btn"
+            onclick="this.parentElement.parentElement.remove()"
+            >
+            Remove
+            </button>
+        </td>
+
+    `;
+
+
+    table.appendChild(row);
+
+
+    document
+    .getElementById("trackerCompany")
+    .value = "";
+
+
+    document
+    .getElementById("trackerPosition")
+    .value = "";
+
+}
+
+
+/* =========================================================
+   BACK TO TOP BUTTON
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function() {
+
+        let button =
+            document
+            .getElementById("topButton");
+
+        if(window.scrollY > 400) {
+
+            button.style.display =
+                "block";
+
+        } else {
+
+            button.style.display =
+                "none";
+
+        }
+
+    }
+);
 
 </script>
-
 
 </body>
 </html>
