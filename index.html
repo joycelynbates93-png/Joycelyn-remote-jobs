@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Joycelyn's Work From Home Job Hub</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+    radial-gradient(circle at 40% 70%, rgba(255,255,255,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+    linear-gradient(135deg, #ff69b4, #f7a6d2, #ff69b4);
+
+  background-size:
+    80px 80px,
+    120px 120px,
+    100px 100px,
+    150px 150px,
+    cover;
+
+  background-attachment: fixed;
+}
+
+/* SPARKLE EFFECT */
+
+body::before {
+  content: "✦ ✧ ✨ ✦ ✧ ✨ ✦ ✧ ✦ ✨ ✧ ✦ ✨ ✧ ✦";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: rgba(255,255,255,.65);
+  font-size: 24px;
+  letter-spacing: 25px;
+  line-height: 80px;
+  pointer-events: none;
+  z-index: -1;
+  animation: sparkle 5s infinite alternate;
+}
+
+@keyframes sparkle {
+  from {
+    opacity: .35;
+  }
+
+  to {
+    opacity: .9;
+  }
+}
+
+/* MAIN CONTAINER */
+
+.container {
+  width: 94%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+  margin-top: 25px;
+  padding: 35px 20px;
+  text-align: center;
+
+  background: rgba(255,255,255,.94);
+  border-radius: 25px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.18),
+    0 0 20px rgba(255,255,255,.7);
+
+  border: 3px solid rgba(255,255,255,.8);
+}
+
+.header h1 {
+  margin: 0;
+  color: #d41472;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 900;
+}
+
+.header h1 span {
+  color: #111;
+}
+
+.header p {
+  margin: 12px auto 0;
+  max-width: 750px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* NAVIGATION */
+
+.nav {
+  margin: 20px 0;
+  padding: 15px;
+  background: #111;
+  border-radius: 18px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.25);
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.nav a:hover {
+  background: #ff69b4;
+  transform: translateY(-2px);
+}
+
+/* SEARCH */
+
+.search-box {
+  margin: 20px 0;
+  position: sticky;
+  top: 10px;
+  z-index: 50;
+}
+
+#companySearch {
+  width: 100%;
+  padding: 18px 22px;
+
+  border: 3px solid #d41472;
+  border-radius: 50px;
+
+  font-size: 17px;
+  outline: none;
+
+  background: white;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.18),
+    0 0 15px rgba(255,255,255,.7);
+}
+
+#companySearch:focus {
+  border-color: #111;
+}
+
+/* DIRECTORY */
+
+.directory {
+  background: rgba(255,255,255,.96);
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.directory-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.directory-title h2 {
+  margin: 0;
+  color: #d41472;
+  font-size: 30px;
+}
+
+.directory-title p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* CATEGORY */
+
+.category {
+  margin-top: 35px;
+}
+
+.category h3 {
+  padding: 12px 15px;
+  margin-bottom: 15px;
+
+  color: white;
+  background: linear-gradient(90deg, #111, #d41472);
+
+  border-radius: 10px;
+
+  font-size: 18px;
+}
+
+/* COMPANY GRID */
+
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+/* COMPANY BUTTON */
+
+.company-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px;
+
+  text-decoration: none;
+  color: #222;
+
+  background: linear-gradient(135deg, #fff, #ffe6f2);
+
+  border: 2px solid #f5a4c9;
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  transition: all .25s ease;
+
+  box-shadow: 0 3px 8px rgba(0,0,0,.08);
+}
+
+.company-card:hover {
+  background: linear-gradient(135deg, #d41472, #ff69b4);
+  color: white;
+
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 8px 20px rgba(212,20,114,.35),
+    0 0 15px rgba(255,255,255,.7);
+}
+
+.apply {
+  font-size: 12px;
+  opacity: .7;
+}
+
+.company-card:hover .apply {
+  opacity: 1;
+}
+
+/* NOTICE */
+
+.notice {
+  margin-top: 35px;
+  padding: 20px;
+
+  background: #fff0f7;
+  border-left: 6px solid #d41472;
+
+  border-radius: 12px;
+
+  line-height: 1.7;
+  color: #555;
+}
+
+/* FOOTER */
+
+footer {
+  margin: 25px 0;
+  padding: 25px;
+
+  text-align: center;
+
+  color: white;
+  background: #111;
+
+  border-radius: 20px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.25);
+}
+
+footer strong {
+  color: #ff69b4;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .header {
+    padding: 25px 15px;
+  }
+
+  .directory {
+    padding: 15px;
+  }
+
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav a {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<h1>
+💗 Joycelyn's <span>Work From Home</span> Job Hub ✨
+</h1>
+
+<p>
+Your place to discover legitimate work-from-home and remote job opportunities.
+Click any company below to visit their official careers page and explore available
+remote positions.
+</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="nav">
+
+<a href="#customer-service">📞 Customer Service</a>
+
+<a href="#contractor">🏠 Flexible Work</a>
+
+<a href="#healthcare">🏥 Healthcare</a>
+
+<a href="#finance">💰 Finance & Tech</a>
+
+<a href="#travel">✈️ Travel</a>
+
+</nav>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="companySearch"
+placeholder="🔎 Search for a company..."
+onkeyup="searchCompanies()">
+
+</div>
+
+
+<!-- DIRECTORY -->
+
+<section class="directory">
+
+<div class="directory-title">
+
+<h2>✨ U.S. Remote Job Company Directory ✨</h2>
+
+<p>
+Click any company to visit its official careers website.
+Search for remote or work-from-home positions that match your skills and location.
+</p>
+
+</div>
+
+
+<!-- CUSTOMER SERVICE -->
+
+<div class="category" id="customer-service">
+
+<h3>📞 Customer Service & Call Center Companies</h3>
+
+<div class="company-grid">
+
+<a href="https://www.ttecjobs.com/en/work-from-home" target="_blank" class="company-card">TTEC <span class="apply">Apply ↗</span></a>
+
+<a href="https://teleperformance.searchgreatcareers.com/location/remote-jobs/41925/1000000000100/2" target="_blank" class="company-card">Teleperformance <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.concentrix.com/job-search/?country=United+States+of+America&wah=1" target="_blank" class="company-card">Concentrix <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.foundever.com/content/Find-a-Job/" target="_blank" class="company-card">Foundever <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.alorica.com/careers/" target="_blank" class="company-card">Alorica <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.sutherlandglobal.com/" target="_blank" class="company-card">Sutherland <span class="apply">Apply ↗</span></a>
+
+<a href="https://vxi.com/careers/" target="_blank" class="company-card">VXI Global Solutions <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.conduent.com/customer-experience-management/work-at-home/" target="_blank" class="company-card">Conduent <span class="apply">Apply ↗</span></a>
+
+<a href="https://taskus.com/careers/" target="_blank" class="company-card">TaskUs <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.weareeverise.com/careers/" target="_blank" class="company-card">Everise <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.qualfon.com/careers/" target="_blank" class="company-card">Qualfon <span class="apply">Apply ↗</span></a>
+
+<a href="https://intouchcx.com/careers/" target="_blank" class="company-card">IntouchCX <span class="apply">Apply ↗</span></a>
+
+<a href="https://resultscx.com/careers/" target="_blank" class="company-card">ResultsCX <span class="apply">Apply ↗</span></a>
+
+<a href="https://probecx.com/careers/" target="_blank" class="company-card">Probe CX <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.iqor.com/careers" target="_blank" class="company-card">iQor <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.firstsource.com/careers/" target="_blank" class="company-card">Firstsource <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.exlservice.com/careers" target="_blank" class="company-card">EXL <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.genpact.com/careers" target="_blank" class="company-card">Genpact <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.wns.com/careers" target="_blank" class="company-card">WNS <span class="apply">Apply ↗</span></a>
+
+<a href="https://maximus.com/careers" target="_blank" class="company-card">Maximus <span class="apply">Apply ↗</span></a>
+
+</div>
+</div>
+
+
+<!-- CONTRACTOR -->
+
+<div class="category" id="contractor">
+
+<h3>🏠 Flexible & Contractor Work</h3>
+
+<div class="company-grid">
+
+<a href="https://jobs.workingsolutions.com/" target="_blank" class="company-card">Working Solutions <span class="apply">Apply ↗</span></a>
+
+<a href="https://join.liveops.com/opportunities/" target="_blank" class="company-card">Liveops <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.ariseworkfromhome.com/" target="_blank" class="company-card">Arise <span class="apply">Apply ↗</span></a>
+
+<a href="https://nexrep.com/apply/" target="_blank" class="company-card">NexRep <span class="apply">Apply ↗</span></a>
+
+<a href="https://omniinteractions.com/join/" target="_blank" class="company-card">Omni Interactions <span class="apply">Apply ↗</span></a>
+
+<a href="https://broadpath.com/careers/" target="_blank" class="company-card">BroadPath <span class="apply">Apply ↗</span></a>
+
+<a href="https://careers.kellyocg.com/" target="_blank" class="company-card">Kelly Services <span class="apply">Apply ↗</span></a>
+
+</div>
+</div>
+
+
+<!-- HEALTHCARE -->
+
+<div class="category" id="healthcare">
+
+<h3>🏥 Healthcare & Health Insurance</h3>
+
+<div class="company-grid">
+
+<a href="https://jobs.cvshealth.com/us/en/search-results?keywords=Remote" target="_blank" class="company-card">CVS Health <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.thecignagroup.com/us/en/remote-jobs" target="_blank" class="company-card">The Cigna Group <span class="apply">Apply ↗</span></a>
+
+<a href="https://careers.unitedhealthgroup.com/location/remote-jobs/34088/1000000000100/2" target="_blank" class="company-card">UnitedHealth Group <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.optum.com/careers.html" target="_blank" class="company-card">Optum <span class="apply">Apply ↗</span></a>
+
+<a href="https://careers.humana.com/us/en/search-results?keywords=Remote" target="_blank" class="company-card">Humana <span class="apply">Apply ↗</span></a>
+
+<a href="https://careers.elevancehealth.com/" target="_blank" class="company-card">Elevance Health <span class="apply">Apply ↗</span></a>
+
+<a href="https://careers.molinahealthcare.com/" target="_blank" class="company-card">Molina Healthcare <span class="apply">Apply ↗</span></a>
+
+<a href="https://r1rcm.com/careers/" target="_blank" class="company-card">R1 RCM <span class="apply">Apply ↗</span></a>
+
+<a href="https://sagilityhealth.com/careers/" target="_blank" class="company-card">Sagility <span class="apply">Apply ↗</span></a>
+
+<a href="https://pinsourcing.com/jobs/" target="_blank" class="company-card">Pearl Interactive Network <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.centene.com/" target="_blank" class="company-card">Centene <span class="apply">Apply ↗</span></a>
+
+<a href="https://about.kaiserpermanente.org/careers" target="_blank" class="company-card">Kaiser Permanente <span class="apply">Apply ↗</span></a>
+
+</div>
+</div>
+
+
+<!-- FINANCE -->
+
+<div class="category" id="finance">
+
+<h3>💰 Banking, Finance & Technology</h3>
+
+<div class="company-grid">
+
+<a href="https://www.amazon.jobs/en/locations/virtual-locations" target="_blank" class="company-card">Amazon <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.apple.com/en-us/search?team=home-advisor" target="_blank" class="company-card">Apple <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.dell.com/remote-jobs" target="_blank" class="company-card">Dell Technologies <span class="apply">Apply ↗</span></a>
+
+<a href="https://careers.microsoft.com/" target="_blank" class="company-card">Microsoft <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.americanexpress.com/en-us/careers/" target="_blank" class="company-card">American Express <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.capitalonecareers.com/" target="_blank" class="company-card">Capital One <span class="apply">Apply ↗</span></a>
+
+<a href="https://careers.pnc.com/" target="_blank" class="company-card">PNC Bank <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.wellsfargojobs.com/" target="_blank" class="company-card">Wells Fargo <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.fidelity.com/" target="_blank" class="company-card">Fidelity <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.schwabjobs.com/" target="_blank" class="company-card">Charles Schwab <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.telusdigital.com/careers" target="_blank" class="company-card">TELUS Digital <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.adp.com/" target="_blank" class="company-card">ADP <span class="apply">Apply ↗</span></a>
+
+<a href="https://aquent.com/find-work" target="_blank" class="company-card">Aquent <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.roberthalf.com/us/en/jobs" target="_blank" class="company-card">Robert Half <span class="apply">Apply ↗</span></a>
+
+</div>
+</div>
+
+
+<!-- TRAVEL -->
+
+<div class="category" id="travel">
+
+<h3>✈️ Travel, Airlines, Retail & Hospitality</h3>
+
+<div class="company-grid">
+
+<a href="https://careers.united.com/" target="_blank" class="company-card">United Airlines <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.aa.com/" target="_blank" class="company-card">American Airlines <span class="apply">Apply ↗</span></a>
+
+<a href="https://careers.marriott.com/" target="_blank" class="company-card">Marriott <span class="apply">Apply ↗</span></a>
+
+<a href="https://jobs.hilton.com/" target="_blank" class="company-card">Hilton <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.chewy.com/jobs" target="_blank" class="company-card">Chewy <span class="apply">Apply ↗</span></a>
+
+<a href="https://www.wayfair.com/careers" target="_blank" class="company-card">Wayfair <span class="apply">Apply ↗</span></a>
+
+</div>
+</div>
+
+
+<!-- IMPORTANT NOTICE -->
+
+<div class="notice">
+
+<strong>💗 Please Read Before Applying:</strong>
+
+<br><br>
+
+This website provides links to company career websites for your convenience.
+Remote job availability changes frequently, and some positions may only be
+available in certain states or locations.
+
+Always read the official job description carefully to make sure you meet the
+requirements before applying.
+
+<strong>Never pay someone to apply for a job.</strong>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<strong>💗 Joycelyn's Work From Home Job Hub ✨</strong>
+
+<br><br>
+
+Helping job seekers find legitimate work-from-home opportunities.
+
+<br><br>
+
+✨ Keep applying. Keep believing. Your next opportunity could be one click away! ✨
+
+</footer>
+
+
+</div>
+
+
+<!-- SEARCH FUNCTION -->
+
+<script>
+
+function searchCompanies() {
+
+  let input = document
+    .getElementById("companySearch")
+    .value
+    .toLowerCase();
+
+  let cards = document.querySelectorAll(".company-card");
+
+  cards.forEach(function(card) {
+
+    let company = card.textContent.toLowerCase();
+
+    if (company.includes(input)) {
+
+      card.style.display = "flex";
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+}
+
+</script>
+
+
+</body>
+</html>
