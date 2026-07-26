@@ -40,6 +40,8 @@ body {
         170px 170px,
         cover;
 
+    background-attachment: fixed;
+
     padding: 30px 15px 60px;
 }
 
@@ -268,7 +270,7 @@ body {
 }
 
 /* =========================================================
-   QUICK RESOURCE CARDS
+   RESOURCES
 ========================================================= */
 
 .resources-section {
@@ -288,27 +290,18 @@ body {
 
 .resource-card {
     background: #fff0f7;
-
     border: 2px solid #f4b3d3;
-
     border-radius: 18px;
-
     padding: 20px;
-
     text-decoration: none;
-
     color: #5b2141;
-
     transition: .3s;
 }
 
 .resource-card:hover {
     transform: translateY(-5px);
-
     background: linear-gradient(145deg,#d63384,#f06bb7);
-
     color: white;
-
     box-shadow: 0 10px 20px rgba(160,30,100,.3);
 }
 
@@ -350,39 +343,26 @@ body {
 
 .company-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(230px,1fr));
-
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
     gap: 15px;
 }
 
 .company-card {
     position: relative;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
-
     min-height: 125px;
-
     padding: 18px;
-
     text-decoration: none;
-
     color: #54203c;
 
     background:
         linear-gradient(145deg,#fff7fb,#ffe5f2);
 
     border: 2px solid #f7b4d4;
-
     border-radius: 18px;
-
     overflow: hidden;
-
     transition: all .3s ease;
 
     box-shadow:
@@ -391,28 +371,20 @@ body {
 
 .company-card::before {
     content: "✦";
-
     position: absolute;
-
     right: 12px;
-
     top: 8px;
-
     color: #e65ca8;
-
     font-size: 18px;
 }
 
 .company-card:hover {
-    transform:
-        translateY(-6px)
-        scale(1.02);
+    transform: translateY(-6px) scale(1.02);
 
     background:
         linear-gradient(145deg,#d63384,#f06bb7);
 
     border-color: white;
-
     color: white;
 
     box-shadow:
@@ -422,35 +394,27 @@ body {
 
 .company-number {
     font-size: 12px;
-
     color: #b04478;
-
     font-weight: 700;
 }
 
-.company-card:hover
-.company-number {
+.company-card:hover .company-number {
     color: #ffe7f5;
 }
 
 .company-name {
     font-size: 17px;
-
     font-weight: 800;
-
     margin: 7px 0;
 }
 
 .apply {
     font-size: 13px;
-
     font-weight: 700;
-
     color: #d63384;
 }
 
-.company-card:hover
-.apply {
+.company-card:hover .apply {
     color: white;
 }
 
@@ -459,32 +423,54 @@ body {
 ========================================================= */
 
 .tracker-section {
-    background: rgba(255,255,255,.96);
-
+    background: rgba(255,255,255,.97);
     border-radius: 25px;
-
     padding: 25px;
-
     margin: 30px 0;
 
     box-shadow:
         0 8px 25px rgba(120,30,80,.2);
 }
 
+.tracker-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: linear-gradient(145deg,#fff0f7,#ffddec);
+    border: 2px solid #f5add0;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 26px;
+    font-weight: 800;
+    color: #c21870;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #8b5270;
+    font-weight: 700;
+}
+
 .tracker-form {
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(180px,1fr));
-
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
     gap: 10px;
 }
 
 .tracker-form input,
-.tracker-form select {
+.tracker-form select,
+.tracker-form textarea {
 
     width: 100%;
-
     padding: 12px;
 
     border-radius: 10px;
@@ -494,6 +480,20 @@ body {
     outline: none;
 
     background: #fff9fc;
+
+    font-family: inherit;
+}
+
+.tracker-form textarea {
+    min-height: 45px;
+    resize: vertical;
+}
+
+.tracker-form input:focus,
+.tracker-form select:focus,
+.tracker-form textarea:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 8px rgba(214,51,132,.15);
 }
 
 .tracker-form button {
@@ -511,6 +511,59 @@ body {
     cursor: pointer;
 
     padding: 12px;
+
+    transition: .3s;
+}
+
+.tracker-form button:hover {
+    background: #b81268;
+    transform: translateY(-2px);
+}
+
+.tracker-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tracker-controls input,
+.tracker-controls select {
+    flex: 1;
+    min-width: 180px;
+    padding: 12px;
+    border: 2px solid #f2b2d2;
+    border-radius: 10px;
+    background: #fff9fc;
+}
+
+.action-btn {
+    border: none;
+    padding: 11px 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #ffe1ef;
+    color: #a71962;
+}
+
+.action-btn:hover {
+    background: #d63384;
+    color: white;
+}
+
+.export-btn {
+    background: #d63384;
+    color: white;
+}
+
+.clear-btn {
+    background: #f7c4da;
+    color: #8d164f;
+}
+
+.tracker-table-wrapper {
+    overflow-x: auto;
 }
 
 .tracker-table {
@@ -521,7 +574,7 @@ body {
 
     border-collapse: collapse;
 
-    overflow: hidden;
+    min-width: 850px;
 }
 
 .tracker-table th,
@@ -533,6 +586,8 @@ body {
         1px solid #f4c7dc;
 
     text-align: left;
+
+    vertical-align: top;
 }
 
 .tracker-table th {
@@ -542,19 +597,67 @@ body {
     color: #a71962;
 }
 
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #ffe1ef;
+    color: #a71962;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.job-link {
+    color: #d63384;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.job-link:hover {
+    text-decoration: underline;
+}
+
+.note-text {
+    max-width: 200px;
+    white-space: normal;
+    font-size: 13px;
+}
+
+.tracker-actions {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.edit-btn,
 .delete-btn {
 
     border: none;
 
-    background: #f8c5dc;
-
-    color: #8d164f;
-
-    padding: 6px 10px;
+    padding: 7px 10px;
 
     border-radius: 8px;
 
     cursor: pointer;
+
+    font-weight: 700;
+}
+
+.edit-btn {
+    background: #e8c5ff;
+    color: #68208d;
+}
+
+.delete-btn {
+    background: #f8c5dc;
+    color: #8d164f;
+}
+
+.no-applications {
+    text-align: center;
+    padding: 25px;
+    color: #8b5270;
+    font-style: italic;
 }
 
 /* =========================================================
@@ -584,18 +687,13 @@ body {
 }
 
 .scam-warning h2 {
-
     color: #c21870;
-
     text-align: center;
 }
 
 .scam-warning ul {
-
     max-width: 800px;
-
     margin: auto;
-
     line-height: 1.8;
 }
 
@@ -620,13 +718,9 @@ body {
 }
 
 .about-section p {
-
     max-width: 800px;
-
     margin: 10px auto;
-
     line-height: 1.8;
-
     color: #66314d;
 }
 
@@ -713,7 +807,6 @@ body {
 }
 
 .footer strong {
-
     font-size: 20px;
 }
 
@@ -762,9 +855,7 @@ body {
 }
 
 #topButton:hover {
-
-    transform:
-        scale(1.1);
+    transform: scale(1.1);
 }
 
 /* =========================================================
@@ -774,27 +865,18 @@ body {
 @media(max-width:600px) {
 
     body {
-
-        padding:
-            15px
-            10px
-            50px;
+        padding: 15px 10px 50px;
     }
 
     .hero {
-
-        padding:
-            25px
-            15px;
+        padding: 25px 15px;
     }
 
     .hero h1 {
-
         font-size: 30px;
     }
 
     .hero p {
-
         font-size: 15px;
     }
 
@@ -802,23 +884,19 @@ body {
     .featured-section,
     .resources-section,
     .tracker-section {
-
         padding: 18px;
     }
 
     .company-grid {
-
         grid-template-columns: 1fr;
     }
 
     .company-card {
-
         min-height: 110px;
     }
 
-    .tracker-table {
-
-        font-size: 13px;
+    .tracker-controls {
+        flex-direction: column;
     }
 
 }
@@ -826,11 +904,9 @@ body {
 </style>
 </head>
 
-
 <body>
 
 <div class="page">
-
 
 <!-- =====================================================
      MAIN HEADER
@@ -841,8 +917,8 @@ body {
 <h1>Joycelyn's Work From Home Job Hub</h1>
 
 <p>
-Welcome to your one-stop destination for discovering work-from-home career opportunities! 
-Browse trusted employers, explore job categories, find helpful career resources, 
+Welcome to your one-stop destination for discovering work-from-home career opportunities!
+Browse trusted employers, explore job categories, find helpful career resources,
 and keep track of the jobs you apply for—all in one place. 💕
 </p>
 
@@ -856,17 +932,11 @@ and keep track of the jobs you apply for—all in one place. 💕
 <nav class="quick-nav">
 
 <a href="#featured">⭐ Featured Jobs</a>
-
 <a href="#bpo">📞 Customer Service</a>
-
 <a href="#contractor">💻 Flexible Work</a>
-
 <a href="#healthcare">🏥 Healthcare</a>
-
 <a href="#corporate">💼 Corporate</a>
-
 <a href="#resources">📚 Resources</a>
-
 <a href="#tracker">📊 Application Tracker</a>
 
 </nav>
@@ -893,74 +963,57 @@ href="https://www.ttecjobs.com/en/work-from-home"
 target="_blank">
 
 <div class="featured-icon">📞</div>
-
 <h3>TTEC</h3>
-
 <p>Customer Experience & Support</p>
 
 </a>
-
 
 <a class="featured-card"
 href="https://vxi.com/careers/"
 target="_blank">
 
 <div class="featured-icon">💻</div>
-
 <h3>VXI Global</h3>
-
 <p>Customer Service & Support</p>
 
 </a>
-
 
 <a class="featured-card"
 href="https://jobs.cvshealth.com/us/en/search-results?keywords=Remote"
 target="_blank">
 
 <div class="featured-icon">🏥</div>
-
 <h3>CVS Health</h3>
-
 <p>Healthcare & Customer Care</p>
 
 </a>
-
 
 <a class="featured-card"
 href="https://www.amazon.jobs/en/locations/virtual-locations"
 target="_blank">
 
 <div class="featured-icon">📦</div>
-
 <h3>Amazon</h3>
-
 <p>Virtual & Corporate Roles</p>
 
 </a>
-
 
 <a class="featured-card"
 href="https://jobs.concentrix.com/job-search/?country=United+States+of+America&wah=1"
 target="_blank">
 
 <div class="featured-icon">🎧</div>
-
 <h3>Concentrix</h3>
-
 <p>Customer Experience</p>
 
 </a>
-
 
 <a class="featured-card"
 href="https://www.ttecjobs.com/en/work-from-home"
 target="_blank">
 
 <div class="featured-icon">💼</div>
-
 <h3>Remote Careers</h3>
-
 <p>Explore Work From Home Options</p>
 
 </a>
@@ -1033,7 +1086,6 @@ Helpful resources to prepare for your next remote opportunity.
 
 <div class="resource-grid">
 
-
 <a class="resource-card"
 href="https://www.usa.gov/resume"
 target="_blank">
@@ -1045,7 +1097,6 @@ Get help creating or improving your resume before applying.
 </p>
 
 </a>
-
 
 <a class="resource-card"
 href="https://www.dol.gov/general/topic/training"
@@ -1059,7 +1110,6 @@ Explore training and career development resources.
 
 </a>
 
-
 <a class="resource-card"
 href="https://www.usa.gov/job-search"
 target="_blank">
@@ -1071,7 +1121,6 @@ Explore official job search resources and employment information.
 </p>
 
 </a>
-
 
 <a class="resource-card"
 href="https://www.ftc.gov/scams"
@@ -1085,7 +1134,6 @@ Learn how to recognize and avoid common employment scams.
 
 </a>
 
-
 <a class="resource-card"
 href="https://www.dol.gov/general/topic/youthlabor/workers"
 target="_blank">
@@ -1097,7 +1145,6 @@ Learn more about workplace rights and employment resources.
 </p>
 
 </a>
-
 
 <a class="resource-card"
 href="https://www.usa.gov/job-training"
@@ -1133,7 +1180,6 @@ Customer support, call center, technical support, and contact center opportuniti
 </h2>
 
 <div class="company-grid">
-
 
 <a class="company-card" href="https://www.ttecjobs.com/en/work-from-home" target="_blank">
 <span class="company-number">#1</span>
@@ -1278,7 +1324,6 @@ Flexible customer service and independent contractor opportunities
 
 <div class="company-grid">
 
-
 <a class="company-card" href="https://jobs.workingsolutions.com/" target="_blank">
 <span class="company-number">#21</span>
 <span class="company-name">Working Solutions</span>
@@ -1343,7 +1388,6 @@ Healthcare, insurance, member services, scheduling, and support opportunities
 </h2>
 
 <div class="company-grid">
-
 
 <a class="company-card" href="https://jobs.cvshealth.com/us/en/search-results?keywords=Remote" target="_blank">
 <span class="company-number">#28</span>
@@ -1445,7 +1489,6 @@ Technology, banking, finance, travel, retail, and corporate career opportunities
 </h2>
 
 <div class="company-grid">
-
 
 <a class="company-card" href="https://www.amazon.jobs/en/locations/virtual-locations" target="_blank">
 <span class="company-number">#41</span>
@@ -1573,7 +1616,7 @@ Technology, banking, finance, travel, retail, and corporate career opportunities
 
 
 <!-- =====================================================
-     APPLICATION TRACKER
+     UPGRADED APPLICATION TRACKER
 ===================================================== -->
 
 <section class="tracker-section" id="tracker">
@@ -1583,8 +1626,43 @@ Technology, banking, finance, travel, retail, and corporate career opportunities
 </h2>
 
 <p class="section-subtitle">
-Keep track of the companies you've applied to and your application status.
+Keep track of the companies you've applied to. Your applications are automatically saved in your browser.
 </p>
+
+
+<!-- STATISTICS -->
+
+<div class="tracker-stats">
+
+<div class="stat-card">
+<span class="stat-number" id="totalCount">0</span>
+<span class="stat-label">Total Applications</span>
+</div>
+
+<div class="stat-card">
+<span class="stat-number" id="appliedCount">0</span>
+<span class="stat-label">Applied</span>
+</div>
+
+<div class="stat-card">
+<span class="stat-number" id="interviewCount">0</span>
+<span class="stat-label">Interviews</span>
+</div>
+
+<div class="stat-card">
+<span class="stat-number" id="assessmentCount">0</span>
+<span class="stat-label">Assessments</span>
+</div>
+
+<div class="stat-card">
+<span class="stat-number" id="offerCount">0</span>
+<span class="stat-label">Offers</span>
+</div>
+
+</div>
+
+
+<!-- APPLICATION FORM -->
 
 <div class="tracker-form">
 
@@ -1598,6 +1676,17 @@ placeholder="Company Name"
 type="text"
 id="trackerPosition"
 placeholder="Job Title"
+>
+
+<input
+type="date"
+id="trackerDate"
+>
+
+<input
+type="url"
+id="trackerLink"
+placeholder="Job Posting Link"
 >
 
 <select id="trackerStatus">
@@ -1624,12 +1713,80 @@ Not Selected
 
 </select>
 
-<button onclick="addApplication()">
-Add Application
+<textarea
+id="trackerNotes"
+placeholder="Notes about this application..."
+></textarea>
+
+<button onclick="saveApplication()" id="saveButton">
+➕ Add Application
 </button>
 
 </div>
 
+
+<!-- SEARCH AND FILTER -->
+
+<div class="tracker-controls">
+
+<input
+type="text"
+id="trackerSearch"
+placeholder="🔍 Search your applications..."
+onkeyup="renderApplications()"
+>
+
+<select
+id="trackerFilter"
+onchange="renderApplications()"
+>
+
+<option value="All">
+All Statuses
+</option>
+
+<option value="Applied">
+Applied
+</option>
+
+<option value="Interview">
+Interview
+</option>
+
+<option value="Assessment">
+Assessment
+</option>
+
+<option value="Offer">
+Offer
+</option>
+
+<option value="Rejected">
+Not Selected
+</option>
+
+</select>
+
+<button
+class="action-btn export-btn"
+onclick="exportApplications()"
+>
+📥 Export Applications
+</button>
+
+<button
+class="action-btn clear-btn"
+onclick="clearApplications()"
+>
+🧹 Clear All
+</button>
+
+</div>
+
+
+<!-- TABLE -->
+
+<div class="tracker-table-wrapper">
 
 <table class="tracker-table">
 
@@ -1641,9 +1798,15 @@ Add Application
 
 <th>Position</th>
 
+<th>Date</th>
+
 <th>Status</th>
 
-<th>Action</th>
+<th>Job Link</th>
+
+<th>Notes</th>
+
+<th>Actions</th>
 
 </tr>
 
@@ -1655,11 +1818,13 @@ Add Application
 
 </table>
 
+</div>
+
 </section>
 
 
 <!-- =====================================================
-     WORK FROM HOME SCAM WARNING
+     SCAM WARNING
 ===================================================== -->
 
 <section class="scam-warning">
@@ -1698,17 +1863,17 @@ Add Application
 </h2>
 
 <p>
-Welcome! I'm Joycelyn, and I created this Work From Home Job Hub to make it easier 
+Welcome! I'm Joycelyn, and I created this Work From Home Job Hub to make it easier
 for job seekers to find legitimate career opportunities in one convenient place.
 </p>
 
 <p>
-My goal is to help people discover employers, explore career options, prepare for interviews, 
+My goal is to help people discover employers, explore career options, prepare for interviews,
 and stay organized throughout their job search.
 </p>
 
 <p>
-Remember to always review the official employer's website for the most current job openings, 
+Remember to always review the official employer's website for the most current job openings,
 location requirements, eligibility requirements, and application instructions.
 </p>
 
@@ -1774,7 +1939,6 @@ Always verify current openings and requirements directly with the employer.
 
 </footer>
 
-
 </div>
 
 
@@ -1793,7 +1957,7 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})"
 <script>
 
 /* =========================================================
-   SEARCH COMPANIES
+   COMPANY SEARCH
 ========================================================= */
 
 function searchCompanies() {
@@ -1880,77 +2044,740 @@ function filterCategory(category, button) {
 
 
 /* =========================================================
-   APPLICATION TRACKER
+   APPLICATION TRACKER STORAGE
 ========================================================= */
 
-function addApplication() {
+let applications =
+    JSON.parse(
+        localStorage.getItem("joycelynJobApplications")
+    ) || [];
+
+let editingId = null;
+
+
+/* =========================================================
+   SAVE APPLICATION
+========================================================= */
+
+function saveApplication() {
 
     let company =
         document
         .getElementById("trackerCompany")
-        .value;
+        .value
+        .trim();
 
     let position =
         document
         .getElementById("trackerPosition")
+        .value
+        .trim();
+
+    let date =
+        document
+        .getElementById("trackerDate")
         .value;
+
+    let link =
+        document
+        .getElementById("trackerLink")
+        .value
+        .trim();
 
     let status =
         document
         .getElementById("trackerStatus")
         .value;
 
+    let notes =
+        document
+        .getElementById("trackerNotes")
+        .value
+        .trim();
+
 
     if(company === "" || position === "") {
 
-        alert("Please enter the company and job title.");
+        alert(
+            "Please enter the company name and job title."
+        );
 
         return;
 
     }
 
 
-    let table =
+    if(editingId !== null) {
+
+        let application =
+            applications.find(
+                app => app.id === editingId
+            );
+
+        if(application) {
+
+            application.company = company;
+            application.position = position;
+            application.date = date;
+            application.link = link;
+            application.status = status;
+            application.notes = notes;
+
+        }
+
+        editingId = null;
+
         document
-        .getElementById("applicationList");
+        .getElementById("saveButton")
+        .textContent = "➕ Add Application";
+
+    } else {
+
+        let newApplication = {
+
+            id:
+                Date.now(),
+
+            company:
+                company,
+
+            position:
+                position,
+
+            date:
+                date,
+
+            link:
+                link,
+
+            status:
+                status,
+
+            notes:
+                notes
+
+        };
+
+        applications.push(newApplication);
+
+    }
 
 
-    let row =
-        document
-        .createElement("tr");
+    saveToStorage();
+
+    clearTrackerForm();
+
+    renderApplications();
+
+}
 
 
-    row.innerHTML = `
+/* =========================================================
+   SAVE TO LOCAL STORAGE
+========================================================= */
 
-        <td>${company}</td>
+function saveToStorage() {
 
-        <td>${position}</td>
+    localStorage.setItem(
+        "joycelynJobApplications",
+        JSON.stringify(applications)
+    );
 
-        <td>${status}</td>
-
-        <td>
-            <button
-            class="delete-btn"
-            onclick="this.parentElement.parentElement.remove()"
-            >
-            Remove
-            </button>
-        </td>
-
-    `;
+}
 
 
-    table.appendChild(row);
+/* =========================================================
+   CLEAR FORM
+========================================================= */
 
+function clearTrackerForm() {
 
     document
     .getElementById("trackerCompany")
     .value = "";
 
-
     document
     .getElementById("trackerPosition")
     .value = "";
+
+    document
+    .getElementById("trackerDate")
+    .value = "";
+
+    document
+    .getElementById("trackerLink")
+    .value = "";
+
+    document
+    .getElementById("trackerStatus")
+    .value = "Applied";
+
+    document
+    .getElementById("trackerNotes")
+    .value = "";
+
+}
+
+
+/* =========================================================
+   EDIT APPLICATION
+========================================================= */
+
+function editApplication(id) {
+
+    let application =
+        applications.find(
+            app => app.id === id
+        );
+
+    if(!application) return;
+
+
+    document
+    .getElementById("trackerCompany")
+    .value =
+        application.company;
+
+    document
+    .getElementById("trackerPosition")
+    .value =
+        application.position;
+
+    document
+    .getElementById("trackerDate")
+    .value =
+        application.date;
+
+    document
+    .getElementById("trackerLink")
+    .value =
+        application.link;
+
+    document
+    .getElementById("trackerStatus")
+    .value =
+        application.status;
+
+    document
+    .getElementById("trackerNotes")
+    .value =
+        application.notes;
+
+
+    editingId = id;
+
+
+    document
+    .getElementById("saveButton")
+    .textContent =
+        "💾 Save Changes";
+
+
+    document
+    .getElementById("tracker")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================================
+   DELETE APPLICATION
+========================================================= */
+
+function deleteApplication(id) {
+
+    let confirmed =
+        confirm(
+            "Are you sure you want to remove this application?"
+        );
+
+    if(!confirmed) return;
+
+
+    applications =
+        applications.filter(
+            app => app.id !== id
+        );
+
+
+    saveToStorage();
+
+    renderApplications();
+
+}
+
+
+/* =========================================================
+   RENDER APPLICATIONS
+========================================================= */
+
+function renderApplications() {
+
+    let table =
+        document
+        .getElementById("applicationList");
+
+    let search =
+        document
+        .getElementById("trackerSearch")
+        .value
+        .toLowerCase();
+
+    let filter =
+        document
+        .getElementById("trackerFilter")
+        .value;
+
+
+    table.innerHTML = "";
+
+
+    let filteredApplications =
+        applications.filter(function(app) {
+
+            let matchesSearch =
+
+                app.company
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                app.position
+                .toLowerCase()
+                .includes(search)
+
+                ||
+
+                app.notes
+                .toLowerCase()
+                .includes(search);
+
+
+            let matchesFilter =
+
+                filter === "All"
+
+                ||
+
+                app.status === filter;
+
+
+            return (
+                matchesSearch &&
+                matchesFilter
+            );
+
+        });
+
+
+    if(filteredApplications.length === 0) {
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td
+                colspan="7"
+                class="no-applications"
+                >
+
+                No applications found.
+                Add your first application above! 💕
+                
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+
+    filteredApplications.forEach(function(app) {
+
+        let row =
+            document.createElement("tr");
+
+
+        let formattedDate =
+            app.date
+            ?
+            new Date(
+                app.date + "T00:00:00"
+            ).toLocaleDateString()
+            :
+            "—";
+
+
+        let linkHTML =
+            app.link
+            ?
+            `<a
+            class="job-link"
+            href="${escapeHTML(app.link)}"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            View Job ↗
+            </a>`
+            :
+            "—";
+
+
+        row.innerHTML = `
+
+            <td>
+                <strong>
+                ${escapeHTML(app.company)}
+                </strong>
+            </td>
+
+            <td>
+                ${escapeHTML(app.position)}
+            </td>
+
+            <td>
+                ${formattedDate}
+            </td>
+
+            <td>
+
+                <span
+                class="status-badge"
+                >
+
+                ${escapeHTML(app.status)}
+
+                </span>
+
+            </td>
+
+            <td>
+                ${linkHTML}
+            </td>
+
+            <td>
+
+                <div
+                class="note-text"
+                >
+
+                ${escapeHTML(app.notes || "—")}
+
+                </div>
+
+            </td>
+
+            <td>
+
+                <div
+                class="tracker-actions"
+                >
+
+                <button
+                class="edit-btn"
+                onclick="editApplication(${app.id})"
+                >
+                ✏️ Edit
+                </button>
+
+                <button
+                class="delete-btn"
+                onclick="deleteApplication(${app.id})"
+                >
+                🗑️ Delete
+                </button>
+
+                </div>
+
+            </td>
+
+        `;
+
+
+        table.appendChild(row);
+
+    });
+
+
+    updateStatistics();
+
+}
+
+
+/* =========================================================
+   UPDATE STATISTICS
+========================================================= */
+
+function updateStatistics() {
+
+    document
+    .getElementById("totalCount")
+    .textContent =
+        applications.length;
+
+
+    document
+    .getElementById("appliedCount")
+    .textContent =
+
+        applications.filter(
+            app =>
+            app.status === "Applied"
+        ).length;
+
+
+    document
+    .getElementById("interviewCount")
+    .textContent =
+
+        applications.filter(
+            app =>
+            app.status === "Interview"
+        ).length;
+
+
+    document
+    .getElementById("assessmentCount")
+    .textContent =
+
+        applications.filter(
+            app =>
+            app.status === "Assessment"
+        ).length;
+
+
+    document
+    .getElementById("offerCount")
+    .textContent =
+
+        applications.filter(
+            app =>
+            app.status === "Offer"
+        ).length;
+
+}
+
+
+/* =========================================================
+   CLEAR ALL APPLICATIONS
+========================================================= */
+
+function clearApplications() {
+
+    if(applications.length === 0) {
+
+        alert(
+            "There are no applications to clear."
+        );
+
+        return;
+
+    }
+
+
+    let confirmed =
+        confirm(
+            "Are you sure you want to delete ALL saved applications?"
+        );
+
+
+    if(!confirmed) return;
+
+
+    applications = [];
+
+    saveToStorage();
+
+    renderApplications();
+
+}
+
+
+/* =========================================================
+   EXPORT APPLICATIONS
+========================================================= */
+
+function exportApplications() {
+
+    if(applications.length === 0) {
+
+        alert(
+            "There are no applications to export."
+        );
+
+        return;
+
+    }
+
+
+    let csvRows = [];
+
+
+    csvRows.push(
+
+        [
+            "Company",
+            "Position",
+            "Date",
+            "Status",
+            "Job Link",
+            "Notes"
+        ]
+
+        .map(
+            escapeCSV
+        )
+
+        .join(",")
+
+    );
+
+
+    applications.forEach(function(app) {
+
+        csvRows.push(
+
+            [
+
+                app.company,
+
+                app.position,
+
+                app.date,
+
+                app.status,
+
+                app.link,
+
+                app.notes
+
+            ]
+
+            .map(
+                escapeCSV
+            )
+
+            .join(",")
+
+        );
+
+    });
+
+
+    let csvContent =
+        csvRows.join("\n");
+
+
+    let blob =
+        new Blob(
+            [csvContent],
+            {
+                type:
+                "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    let url =
+        URL.createObjectURL(blob);
+
+
+    let link =
+        document.createElement("a");
+
+
+    link.href = url;
+
+    link.download =
+        "Joycelyn-Job-Applications.csv";
+
+
+    document
+    .body
+    .appendChild(link);
+
+
+    link.click();
+
+
+    document
+    .body
+    .removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =========================================================
+   ESCAPE CSV
+========================================================= */
+
+function escapeCSV(value) {
+
+    value =
+        value === null ||
+        value === undefined
+        ?
+        ""
+        :
+        String(value);
+
+
+    if(
+        value.includes(",") ||
+        value.includes('"') ||
+        value.includes("\n")
+    ) {
+
+        return '"' +
+            value.replace(
+                /"/g,
+                '""'
+            )
+            +
+            '"';
+
+    }
+
+
+    return value;
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
 
@@ -1978,6 +2805,20 @@ window.addEventListener(
                 "none";
 
         }
+
+    }
+);
+
+
+/* =========================================================
+   LOAD SAVED APPLICATIONS
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        renderApplications();
 
     }
 );
