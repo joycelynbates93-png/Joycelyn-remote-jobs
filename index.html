@@ -9,7 +9,7 @@
 <style>
 
 /* =========================================================
-   GENERAL
+   BLACK GIRL MAGIC • PINK LUXURY • BUTTERFLY THEME
 ========================================================= */
 
 * {
@@ -24,88 +24,69 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #4a1834;
-    overflow-x: hidden;
+    color: #3b1630;
 
     background:
-        radial-gradient(circle at 10% 20%, rgba(255,255,255,.95) 0 2px, transparent 3px),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,.9) 0 2px, transparent 3px),
-        radial-gradient(circle at 40% 80%, rgba(255,255,255,.9) 0 2px, transparent 3px),
-        radial-gradient(circle at 90% 70%, rgba(255,255,255,.9) 0 2px, transparent 3px),
-        linear-gradient(135deg,#ffb6dc,#f783c4,#e85aa9,#ff9bd2);
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,.7) 0 3px, transparent 4px),
+        radial-gradient(circle at 20% 75%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+        radial-gradient(circle at 90% 80%, rgba(255,255,255,.7) 0 2px, transparent 3px),
+        linear-gradient(135deg, #13000f, #350021, #76004d, #c21870, #f783c4);
 
     background-size:
-        100px 100px,
+        120px 120px,
+        180px 180px,
         150px 150px,
-        130px 130px,
-        170px 170px,
+        200px 200px,
         cover;
 
+    background-attachment: fixed;
     padding: 25px 15px 60px;
-}
-
-body::before {
-    content: "✦  ✧  ✨  ✦  ✧  ✨  ✦  ✧  ✨";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: rgba(255,255,255,.75);
-    font-size: 20px;
-    letter-spacing: 25px;
-    pointer-events: none;
-    animation: sparkleMove 8s linear infinite;
-    z-index: -1;
-}
-
-@keyframes sparkleMove {
-    from {
-        transform: translateX(-100px);
-    }
-    to {
-        transform: translateX(100px);
-    }
 }
 
 .page {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
 }
 
 /* =========================================================
-   BUTTERFLIES
+   FLOATING BUTTERFLIES
 ========================================================= */
 
 .butterfly {
     position: fixed;
-    font-size: 35px;
     z-index: 0;
     pointer-events: none;
+    font-size: 45px;
     animation: floatButterfly 8s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,.7));
 }
 
 .butterfly.one {
+    top: 8%;
     left: 3%;
-    top: 15%;
 }
 
 .butterfly.two {
-    right: 4%;
-    top: 35%;
+    top: 25%;
+    right: 3%;
     animation-delay: 2s;
+    font-size: 35px;
 }
 
 .butterfly.three {
-    left: 6%;
-    bottom: 20%;
+    top: 55%;
+    left: 2%;
     animation-delay: 4s;
+    font-size: 30px;
 }
 
 .butterfly.four {
-    right: 8%;
-    bottom: 10%;
+    bottom: 12%;
+    right: 4%;
     animation-delay: 1s;
+    font-size: 50px;
 }
 
 @keyframes floatButterfly {
@@ -125,245 +106,397 @@ body::before {
 .hero {
     position: relative;
     z-index: 2;
-    text-align: center;
-    background: rgba(255,255,255,.97);
-    border: 3px solid #fff;
-    border-radius: 30px;
-    padding: 35px 20px;
-    margin-bottom: 20px;
 
-    box-shadow:
-        0 10px 35px rgba(137,25,89,.25),
-        0 0 25px rgba(255,255,255,.8);
-}
-
-.hero h1 {
-    margin: 0;
-    color: #c21870;
-    font-size: clamp(30px,5vw,52px);
-    font-weight: 800;
-}
-
-.hero h1::before {
-    content: "✨ ";
-}
-
-.hero h1::after {
-    content: " ✨";
-}
-
-.hero p {
-    margin: 15px auto 0;
-    max-width: 750px;
-    color: #743957;
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-/* =========================================================
-   WORKSTATION DECORATION
-========================================================= */
-
-.workstation {
-    position: relative;
-    z-index: 2;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
     align-items: center;
-    justify-content: center;
     gap: 25px;
-    margin: 20px auto 25px;
-    padding: 20px;
-    max-width: 900px;
-    min-height: 190px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,255,255,.96),
-            rgba(255,225,241,.96)
+            rgba(255,255,255,.98),
+            rgba(255,231,245,.96)
         );
 
-    border: 3px solid white;
-    border-radius: 30px;
+    border: 4px solid #fff;
+    border-radius: 35px;
+
+    padding: 35px;
+
+    margin-bottom: 20px;
 
     box-shadow:
-        0 10px 30px rgba(120,20,80,.25),
-        0 0 20px rgba(255,255,255,.8);
+        0 15px 45px rgba(0,0,0,.35),
+        0 0 30px rgba(255,255,255,.5);
 }
 
-.doll {
-    position: relative;
-    width: 150px;
-    height: 155px;
-    flex-shrink: 0;
+.hero-text {
+    text-align: center;
 }
 
-/* Hair */
-.doll .hair {
-    position: absolute;
-    width: 90px;
-    height: 110px;
-    left: 28px;
-    top: 8px;
-    background: #161016;
-    border-radius: 50% 50% 42% 42%;
-    box-shadow:
-        12px 10px 0 #161016,
-        -10px 15px 0 #161016;
-}
-
-/* Face */
-.doll .face {
-    position: absolute;
-    width: 58px;
-    height: 70px;
-    left: 45px;
-    top: 22px;
-    background: #7a452f;
-    border-radius: 48% 48% 45% 45%;
-    z-index: 2;
-}
-
-/* Eyes */
-.doll .face::before {
-    content: "•   •";
-    position: absolute;
-    top: 22px;
-    left: 13px;
-    color: #1b1015;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-/* Lips */
-.doll .face::after {
-    content: "♡";
-    position: absolute;
-    bottom: 10px;
-    left: 22px;
-    color: #c21870;
-    font-size: 15px;
-}
-
-/* Body / Work Outfit */
-.doll .body {
-    position: absolute;
-    width: 75px;
-    height: 65px;
-    left: 36px;
-    top: 88px;
-    background: linear-gradient(135deg,#111,#333);
-    border-radius: 35px 35px 10px 10px;
-    z-index: 1;
-}
-
-/* Desk */
-.desk {
-    position: relative;
-    width: 390px;
-    height: 140px;
-}
-
-.monitor {
-    position: absolute;
-    width: 170px;
-    height: 100px;
-    left: 60px;
-    top: 0;
-    background: #25202a;
-    border: 7px solid #111;
-    border-radius: 10px;
-    box-shadow: 0 0 0 3px #f06bb7;
-}
-
-.monitor::after {
-    content: "WFH";
-    position: absolute;
-    color: #ff8acb;
-    font-size: 22px;
-    font-weight: bold;
-    left: 55px;
-    top: 32px;
-}
-
-.monitor-stand {
-    position: absolute;
-    left: 132px;
-    top: 100px;
-    width: 25px;
-    height: 25px;
-    background: #222;
-}
-
-.keyboard {
-    position: absolute;
-    left: 245px;
-    top: 92px;
-    width: 110px;
-    height: 28px;
-    border-radius: 5px;
-    background: #fff;
-    border: 2px solid #d63384;
-    transform: rotate(-3deg);
-}
-
-.desk-top {
-    position: absolute;
-    bottom: 0;
-    left: 20px;
-    width: 370px;
-    height: 18px;
-    background: linear-gradient(135deg,#c21870,#f06bb7);
-    border-radius: 10px;
-}
-
-.workstation-text {
-    max-width: 300px;
-}
-
-.workstation-text h2 {
+.hero h1 {
     margin: 0;
-    color: #c21870;
+
+    color: #a8005e;
+
+    font-size: clamp(30px, 5vw, 54px);
+
+    font-weight: 900;
+
+    text-shadow:
+        2px 2px 0 #fff,
+        0 0 12px rgba(194,24,112,.2);
 }
 
-.workstation-text p {
-    line-height: 1.6;
-    color: #743957;
+.hero h1::before {
+    content: "🦋 ";
+}
+
+.hero h1::after {
+    content: " 🦋";
+}
+
+.hero p {
+    margin: 15px auto 0;
+
+    max-width: 750px;
+
+    color: #65304f;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.magic-badge {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(135deg,#16000f,#9b0058);
+
+    color: white;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 15px rgba(100,0,60,.3);
 }
 
 /* =========================================================
-   NAV
+   CSS BLACK GIRL WORKSTATION
+========================================================= */
+
+.workstation {
+    position: relative;
+
+    min-height: 320px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(circle at 50% 20%, rgba(255,255,255,.4), transparent 30%),
+        linear-gradient(145deg,#ffb6dc,#d63384,#720044);
+
+    box-shadow:
+        inset 0 0 35px rgba(255,255,255,.3),
+        0 10px 30px rgba(100,0,60,.3);
+}
+
+/* sparkles */
+
+.workstation::before {
+    content: "✦  ✧  ✦  ✧  ✦";
+
+    position: absolute;
+
+    top: 15px;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 22px;
+
+    letter-spacing: 10px;
+}
+
+/* hair */
+
+.girl-hair {
+    position: absolute;
+
+    width: 150px;
+    height: 175px;
+
+    top: 40px;
+
+    background:
+        radial-gradient(circle at 30% 20%,#3b1b28,#080307 60%);
+
+    border-radius: 50% 50% 40% 40%;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.4);
+}
+
+/* face */
+
+.girl-face {
+    position: absolute;
+
+    width: 105px;
+    height: 125px;
+
+    top: 65px;
+
+    background:
+        linear-gradient(145deg,#7b432c,#4c2419);
+
+    border-radius:
+        48% 48%
+        45% 45%;
+
+    z-index: 2;
+
+    box-shadow:
+        inset -8px -8px 15px rgba(30,0,0,.2);
+}
+
+/* hair front */
+
+.girl-hair::after {
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+    height: 75px;
+
+    left: 5px;
+    top: 5px;
+
+    background: #10070b;
+
+    border-radius:
+        50% 20%
+        50% 30%;
+}
+
+/* eyes */
+
+.girl-face::before {
+    content: "●  ●";
+
+    position: absolute;
+
+    top: 45px;
+    left: 25px;
+
+    color: #160009;
+
+    font-size: 16px;
+
+    letter-spacing: 10px;
+}
+
+/* smile */
+
+.girl-face::after {
+    content: "⌣";
+
+    position: absolute;
+
+    bottom: 22px;
+    left: 44px;
+
+    color: #2b0718;
+
+    font-size: 25px;
+}
+
+/* body */
+
+.girl-body {
+    position: absolute;
+
+    width: 180px;
+    height: 145px;
+
+    bottom: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #31001f
+        );
+
+    border-radius:
+        50px 50px 10px 10px;
+
+    z-index: 1;
+}
+
+/* laptop desk */
+
+.desk {
+    position: absolute;
+
+    bottom: 25px;
+
+    width: 90%;
+
+    height: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #16000f,
+            #5d0038,
+            #16000f
+        );
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.4);
+}
+
+/* laptop */
+
+.laptop {
+    position: absolute;
+
+    bottom: 45px;
+
+    width: 125px;
+    height: 80px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b0012,
+            #6f0050
+        );
+
+    border: 5px solid #f5a6d0;
+
+    border-radius: 10px 10px 4px 4px;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.4);
+}
+
+.laptop::before {
+    content: "💻";
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100%;
+
+    font-size: 35px;
+}
+
+.laptop::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 8px;
+
+    bottom: -13px;
+
+    left: -18px;
+
+    background: #f5a6d0;
+
+    border-radius: 10px;
+}
+
+/* =========================================================
+   NAVIGATION
 ========================================================= */
 
 .quick-nav {
     position: relative;
     z-index: 3;
+
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
     gap: 10px;
+
     margin: 20px 0;
 }
 
 .quick-nav a {
     text-decoration: none;
+
     color: white;
-    background: linear-gradient(135deg,#c21870,#f06bb7);
+
+    background:
+        linear-gradient(
+            135deg,
+            #16000f,
+            #b00066,
+            #f06bb7
+        );
+
     padding: 12px 20px;
+
     border-radius: 50px;
-    font-weight: 700;
+
+    font-weight: 800;
+
     font-size: 14px;
-    box-shadow: 0 5px 12px rgba(150,30,100,.25);
+
+    border: 2px solid rgba(255,255,255,.5);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.25);
+
     transition: .3s;
 }
 
 .quick-nav a:hover {
-    transform: translateY(-3px) scale(1.03);
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.4),
+        0 0 15px rgba(255,255,255,.5);
 }
 
 /* =========================================================
-   SHARED SECTIONS
+   GENERAL SECTIONS
 ========================================================= */
 
 .featured-section,
@@ -374,23 +507,40 @@ body::before {
 .about-section {
     position: relative;
     z-index: 2;
-    background: rgba(255,255,255,.97);
-    border-radius: 25px;
-    padding: 25px;
+
+    background:
+        rgba(255,255,255,.97);
+
+    border-radius: 28px;
+
+    padding: 28px;
+
     margin: 25px 0;
-    box-shadow: 0 8px 25px rgba(120,30,80,.2);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+    border:
+        2px solid rgba(255,255,255,.8);
 }
 
 .section-heading {
     text-align: center;
-    color: #c21870;
+
+    color: #b00066;
+
     margin-top: 0;
-    font-size: 26px;
+
+    font-size: 28px;
+
+    font-weight: 900;
 }
 
 .section-subtitle {
     text-align: center;
-    color: #8b5270;
+
+    color: #81516b;
+
     margin-bottom: 22px;
 }
 
@@ -398,98 +548,134 @@ body::before {
    FEATURED
 ========================================================= */
 
-.featured-grid,
-.resource-grid,
-.company-grid {
+.featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 15px;
-}
 
-.featured-card,
-.resource-card,
-.company-card {
-    text-decoration: none;
-    color: #54203c;
-    background: linear-gradient(145deg,#fff7fb,#ffe5f2);
-    border: 2px solid #f7b4d4;
-    border-radius: 18px;
-    transition: .3s;
+    grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
+
+    gap: 15px;
 }
 
 .featured-card {
     text-align: center;
+
     padding: 20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff4fa,
+            #ffd5e9
+        );
+
+    border: 2px solid #ef9fc8;
+
+    text-decoration: none;
+
+    color: #70184b;
+
+    transition: .3s;
 }
 
-.featured-card:hover,
-.resource-card:hover,
-.company-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    background: linear-gradient(145deg,#d63384,#f06bb7);
+.featured-card:hover {
+    transform:
+        translateY(-6px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #16000f,
+            #d63384
+        );
+
     color: white;
-    box-shadow: 0 12px 25px rgba(175,30,110,.35);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.3);
 }
 
 .featured-icon {
     font-size: 30px;
 }
 
-.featured-card h3 {
-    margin: 8px 0;
-}
-
 /* =========================================================
    SEARCH
 ========================================================= */
 
-.search-box {
-    text-align: center;
-}
-
-.search-box h2 {
-    margin-top: 0;
-    color: #c21870;
-}
-
 #companySearch {
     width: 100%;
-    max-width: 650px;
+
+    max-width: 700px;
+
+    display: block;
+
+    margin: auto;
+
     padding: 16px 20px;
-    border: 3px solid #f3a2cc;
+
+    border:
+        3px solid #ef9fc8;
+
     border-radius: 50px;
+
     outline: none;
+
     font-size: 16px;
+
     color: #55213e;
+
     background: #fff8fc;
 }
 
 #companySearch:focus {
-    border-color: #d63384;
-    box-shadow: 0 0 15px rgba(214,51,132,.25);
+    border-color: #b00066;
+
+    box-shadow:
+        0 0 15px rgba(176,0,102,.25);
 }
 
 .filter-buttons {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 10px;
+
     margin-top: 18px;
 }
 
 .filter-btn {
     border: none;
+
     padding: 10px 18px;
+
     border-radius: 50px;
+
     background: #ffe1ef;
+
     color: #a71962;
-    font-weight: 700;
+
+    font-weight: 800;
+
     cursor: pointer;
+
+    transition: .3s;
 }
 
-.filter-btn.active,
-.filter-btn:hover {
-    background: #d63384;
+.filter-btn:hover,
+.filter-btn.active {
+    background:
+        linear-gradient(
+            135deg,
+            #16000f,
+            #d63384
+        );
+
     color: white;
 }
 
@@ -497,12 +683,44 @@ body::before {
    RESOURCES
 ========================================================= */
 
-.resource-card {
-    padding: 20px;
+.resource-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap: 15px;
 }
 
-.resource-card h3 {
-    margin-top: 0;
+.resource-card {
+    background: #fff0f7;
+
+    border:
+        2px solid #f4b3d3;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    text-decoration: none;
+
+    color: #5b2141;
+
+    transition: .3s;
+}
+
+.resource-card:hover {
+    transform:
+        translateY(-5px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #16000f,
+            #d63384
+        );
+
+    color: white;
 }
 
 /* =========================================================
@@ -511,64 +729,133 @@ body::before {
 
 .category-title {
     text-align: center;
-    color: #c21870;
-    font-size: 24px;
+
+    color: #b00066;
+
+    font-size: 25px;
+
     margin: 0 0 20px;
 }
 
 .category-title span {
     display: block;
+
     font-size: 13px;
+
     color: #8b5270;
+
     font-weight: 400;
+
     margin-top: 5px;
 }
 
-/* =========================================================
-   COMPANY CARDS
-========================================================= */
+.company-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+
+    gap: 15px;
+}
 
 .company-card {
     position: relative;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
+
     min-height: 125px;
+
     padding: 18px;
-    overflow: hidden;
-    box-shadow: 0 5px 12px rgba(160,40,100,.12);
+
+    text-decoration: none;
+
+    color: #54203c;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff7fb,
+            #ffe5f2
+        );
+
+    border:
+        2px solid #f7b4d4;
+
+    border-radius: 18px;
+
+    transition: all .3s ease;
+
+    box-shadow:
+        0 5px 12px rgba(160,40,100,.12);
 }
 
 .company-card::before {
-    content: "✦";
+    content: "🦋";
+
     position: absolute;
+
     right: 12px;
+
     top: 8px;
-    color: #e65ca8;
+
     font-size: 18px;
+}
+
+.company-card:hover {
+    transform:
+        translateY(-6px)
+        scale(1.02);
+
+    background:
+        linear-gradient(
+            145deg,
+            #16000f,
+            #d63384,
+            #f06bb7
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.35);
 }
 
 .company-number {
     font-size: 12px;
+
     color: #b04478;
+
     font-weight: 700;
+}
+
+.company-card:hover
+.company-number {
+    color: #ffe7f5;
 }
 
 .company-name {
     font-size: 17px;
+
     font-weight: 800;
+
     margin: 7px 0;
 }
 
 .apply {
     font-size: 13px;
+
     font-weight: 700;
+
     color: #d63384;
 }
 
-.company-card:hover .company-number,
-.company-card:hover .apply {
-    color: #ffe7f5;
+.company-card:hover
+.apply {
+    color: white;
 }
 
 /* =========================================================
@@ -578,54 +865,145 @@ body::before {
 .no-phone-section {
     position: relative;
     z-index: 2;
+
     background:
-        linear-gradient(135deg,#fff8fc,#ffe2ef);
-    border: 3px solid #f09bc5;
+        linear-gradient(
+            135deg,
+            #fff,
+            #ffe4f2
+        );
+
+    border:
+        4px solid #d63384;
+
     border-radius: 30px;
+
     padding: 30px;
+
     margin: 30px 0;
-    box-shadow: 0 10px 30px rgba(120,30,80,.2);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.3);
 }
 
-.no-phone-badge {
-    display: inline-block;
-    padding: 8px 15px;
-    border-radius: 50px;
-    background: #d63384;
+.no-phone-banner {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16000f,
+            #8f0053,
+            #d63384
+        );
+
     color: white;
-    font-weight: bold;
+
+    padding: 20px;
+
+    border-radius: 22px;
+
+    margin-bottom: 25px;
 }
 
-.no-phone-section h2 {
-    color: #c21870;
-    text-align: center;
+.no-phone-banner h2 {
+    margin: 0;
+
+    font-size: 30px;
 }
 
-.no-phone-section .intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 10px auto 25px;
-    line-height: 1.7;
+.no-phone-banner p {
+    margin-bottom: 0;
+
+    line-height: 1.6;
+}
+
+.no-phone-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap: 15px;
 }
 
 .no-phone-card {
-    background: white;
-    border: 2px solid #f4b3d3;
-    border-radius: 20px;
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-height: 180px;
+
     padding: 20px;
+
     text-decoration: none;
-    color: #54203c;
+
+    color: #4c1938;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fc,
+            #ffd9ea
+        );
+
+    border:
+        2px solid #efa3c9;
+
+    border-radius: 20px;
+
     transition: .3s;
 }
 
 .no-phone-card:hover {
-    transform: translateY(-6px);
-    background: linear-gradient(145deg,#d63384,#f06bb7);
+    transform:
+        translateY(-6px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #16000f,
+            #c21870
+        );
+
     color: white;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.3);
 }
 
 .no-phone-card h3 {
     margin-top: 0;
+
+    color: #a8005e;
+}
+
+.no-phone-card:hover h3 {
+    color: white;
+}
+
+.chat-tag {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #ffe1ef;
+
+    color: #a71962;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.no-phone-card:hover .chat-tag {
+    background: white;
 }
 
 /* =========================================================
@@ -634,54 +1012,97 @@ body::before {
 
 .tracker-form {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
     gap: 10px;
 }
 
 .tracker-form input,
 .tracker-form select {
+
     width: 100%;
+
     padding: 12px;
+
     border-radius: 10px;
-    border: 2px solid #f2b2d2;
+
+    border:
+        2px solid #f2b2d2;
+
     outline: none;
+
     background: #fff9fc;
 }
 
 .tracker-form button {
+
     border: none;
+
     border-radius: 10px;
-    background: #d63384;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16000f,
+            #d63384
+        );
+
     color: white;
-    font-weight: 700;
+
+    font-weight: 800;
+
     cursor: pointer;
+
     padding: 12px;
+}
+
+.tracker-note {
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #81516b;
+
+    margin-top: 15px;
 }
 
 .tracker-table {
     width: 100%;
+
     margin-top: 20px;
+
     border-collapse: collapse;
 }
 
 .tracker-table th,
 .tracker-table td {
     padding: 12px;
-    border-bottom: 1px solid #f4c7dc;
+
+    border-bottom:
+        1px solid #f4c7dc;
+
     text-align: left;
 }
 
 .tracker-table th {
     background: #ffe2ef;
+
     color: #a71962;
 }
 
 .delete-btn {
     border: none;
+
     background: #f8c5dc;
+
     color: #8d164f;
+
     padding: 6px 10px;
+
     border-radius: 8px;
+
     cursor: pointer;
 }
 
@@ -692,23 +1113,57 @@ body::before {
 .scam-warning {
     position: relative;
     z-index: 2;
-    background: linear-gradient(135deg,#fff2f8,#ffe0ed);
-    border: 3px solid #f09bc5;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff2f8,
+            #ffe0ed
+        );
+
+    border:
+        3px solid #f09bc5;
+
     border-radius: 25px;
+
     padding: 25px;
+
     margin: 30px 0;
-    box-shadow: 0 8px 25px rgba(120,30,80,.15);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.2);
 }
 
 .scam-warning h2 {
-    color: #c21870;
+    color: #b00066;
+
     text-align: center;
 }
 
 .scam-warning ul {
     max-width: 800px;
+
     margin: auto;
+
     line-height: 1.8;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    text-align: center;
+}
+
+.about-section p {
+    max-width: 800px;
+
+    margin: 10px auto;
+
+    line-height: 1.8;
+
+    color: #66314d;
 }
 
 /* =========================================================
@@ -718,30 +1173,64 @@ body::before {
 .contact-section {
     position: relative;
     z-index: 2;
-    background: linear-gradient(135deg,#d63384,#f06bb7);
+
+    background:
+        linear-gradient(
+            135deg,
+            #16000f,
+            #8f0053,
+            #d63384
+        );
+
     color: white;
-    border-radius: 25px;
-    padding: 30px;
+
+    border-radius: 30px;
+
+    padding: 35px;
+
     margin: 30px 0;
+
     text-align: center;
-    box-shadow: 0 10px 25px rgba(120,30,80,.25);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.35);
 }
 
 .contact-buttons {
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
     gap: 12px;
+
     margin-top: 20px;
 }
 
 .contact-buttons a {
     text-decoration: none;
+
     background: white;
-    color: #c21870;
+
+    color: #a8005e;
+
     padding: 12px 22px;
+
     border-radius: 50px;
-    font-weight: 700;
+
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.contact-buttons a:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 15px
+        rgba(0,0,0,.3);
 }
 
 /* =========================================================
@@ -751,10 +1240,17 @@ body::before {
 .footer {
     position: relative;
     z-index: 2;
+
     text-align: center;
+
     color: white;
+
     padding: 30px 15px;
+
     font-size: 15px;
+
+    text-shadow:
+        0 2px 4px rgba(0,0,0,.5);
 }
 
 .footer strong {
@@ -767,19 +1263,40 @@ body::before {
 
 #topButton {
     position: fixed;
+
     bottom: 20px;
+
     right: 20px;
-    width: 50px;
-    height: 50px;
+
+    width: 52px;
+
+    height: 52px;
+
     border: none;
+
     border-radius: 50%;
-    background: linear-gradient(135deg,#c21870,#f06bb7);
+
+    background:
+        linear-gradient(
+            135deg,
+            #16000f,
+            #d63384
+        );
+
     color: white;
+
     font-size: 22px;
+
     font-weight: bold;
+
     cursor: pointer;
-    box-shadow: 0 5px 20px rgba(100,20,70,.35);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.4);
+
     display: none;
+
     z-index: 1000;
 }
 
@@ -787,41 +1304,61 @@ body::before {
    MOBILE
 ========================================================= */
 
-@media(max-width:700px) {
+@media(max-width:750px) {
 
     body {
-        padding: 15px 10px 50px;
+        padding:
+            15px
+            10px
+            50px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding:
+            25px
+            15px;
     }
 
     .hero h1 {
         font-size: 30px;
     }
 
-    .workstation {
-        flex-direction: column;
-        text-align: center;
+    .hero p {
+        font-size: 15px;
     }
 
-    .desk {
-        transform: scale(.8);
-        margin: -20px 0;
+    .workstation {
+        min-height: 280px;
+    }
+
+    .category,
+    .featured-section,
+    .resources-section,
+    .tracker-section,
+    .no-phone-section {
+        padding: 18px;
     }
 
     .company-grid,
-    .featured-grid,
-    .resource-grid {
+    .no-phone-grid {
         grid-template-columns: 1fr;
     }
 
+    .company-card {
+        min-height: 110px;
+    }
+
     .tracker-table {
-        display: block;
-        overflow-x: auto;
         font-size: 13px;
     }
 
-    .butterfly {
-        font-size: 25px;
+    .tracker-table th,
+    .tracker-table td {
+        padding: 8px;
     }
+
 }
 
 </style>
@@ -829,67 +1366,54 @@ body::before {
 
 <body>
 
-<!-- Decorative butterflies -->
+<!-- FLOATING BUTTERFLIES -->
+
 <div class="butterfly one">🦋</div>
 <div class="butterfly two">🦋</div>
 <div class="butterfly three">🦋</div>
 <div class="butterfly four">🦋</div>
 
+
 <div class="page">
 
+
 <!-- =====================================================
-     HEADER
+     HERO
 ===================================================== -->
 
 <section class="hero">
 
+<div class="hero-text">
+
 <h1>Joycelyn's Work From Home Job Hub</h1>
 
 <p>
-Welcome to your one-stop destination for discovering work-from-home career opportunities!
-Browse trusted employers, explore job categories, find helpful career resources,
-and keep track of the jobs you apply for—all in one place. 💕
+Welcome to your one-stop destination for discovering legitimate
+work-from-home career opportunities! Browse trusted employers,
+explore job categories, find helpful career resources, and keep
+track of the jobs you apply for—all in one place. 💕
 </p>
 
-</section>
-
-
-<!-- =====================================================
-     WORKSTATION CHARACTER DESIGN
-===================================================== -->
-
-<section class="workstation">
-
-<div class="doll">
-
-<div class="hair"></div>
-
-<div class="face"></div>
-
-<div class="body"></div>
+<div class="magic-badge">
+✨ Black Girl Magic • Remote Career Dreams ✨
+</div>
 
 </div>
 
-<div class="desk">
 
-<div class="monitor"></div>
+<!-- CSS WORKSTATION -->
 
-<div class="monitor-stand"></div>
+<div class="workstation">
 
-<div class="keyboard"></div>
+<div class="girl-hair"></div>
 
-<div class="desk-top"></div>
+<div class="girl-face"></div>
 
-</div>
+<div class="girl-body"></div>
 
-<div class="workstation-text">
+<div class="laptop"></div>
 
-<h2>💕 Work From Home & Get Hired!</h2>
-
-<p>
-Find remote career opportunities, explore legitimate employers,
-and organize your job search all in one cute and convenient place.
-</p>
+<div class="desk"></div>
 
 </div>
 
@@ -916,13 +1440,13 @@ and organize your job search all in one cute and convenient place.
 
 <a href="#resources">📚 Resources</a>
 
-<a href="#tracker">📊 Tracker</a>
+<a href="#tracker">📊 Application Tracker</a>
 
 </nav>
 
 
 <!-- =====================================================
-     FEATURED
+     FEATURED EMPLOYERS
 ===================================================== -->
 
 <section class="featured-section" id="featured">
@@ -937,34 +1461,52 @@ Explore popular employers and visit their official career pages to view current 
 
 <div class="featured-grid">
 
-<a class="featured-card" href="https://www.ttecjobs.com/en/work-from-home" target="_blank">
+<a class="featured-card"
+href="https://www.ttecjobs.com/en/work-from-home"
+target="_blank">
 <div class="featured-icon">📞</div>
 <h3>TTEC</h3>
 <p>Customer Experience & Support</p>
 </a>
 
-<a class="featured-card" href="https://vxi.com/careers/" target="_blank">
+<a class="featured-card"
+href="https://vxi.com/careers/"
+target="_blank">
 <div class="featured-icon">💻</div>
 <h3>VXI Global</h3>
 <p>Customer Service & Support</p>
 </a>
 
-<a class="featured-card" href="https://jobs.cvshealth.com/us/en/search-results?keywords=Remote" target="_blank">
+<a class="featured-card"
+href="https://jobs.cvshealth.com/us/en/search-results?keywords=Remote"
+target="_blank">
 <div class="featured-icon">🏥</div>
 <h3>CVS Health</h3>
 <p>Healthcare & Customer Care</p>
 </a>
 
-<a class="featured-card" href="https://www.amazon.jobs/en/locations/virtual-locations" target="_blank">
+<a class="featured-card"
+href="https://www.amazon.jobs/en/locations/virtual-locations"
+target="_blank">
 <div class="featured-icon">📦</div>
 <h3>Amazon</h3>
 <p>Virtual & Corporate Roles</p>
 </a>
 
-<a class="featured-card" href="https://jobs.concentrix.com/job-search/?country=United+States+of+America&wah=1" target="_blank">
+<a class="featured-card"
+href="https://jobs.concentrix.com/job-search/?country=United+States+of+America&wah=1"
+target="_blank">
 <div class="featured-icon">🎧</div>
 <h3>Concentrix</h3>
 <p>Customer Experience</p>
+</a>
+
+<a class="featured-card"
+href="https://www.ttecjobs.com/en/work-from-home"
+target="_blank">
+<div class="featured-icon">💼</div>
+<h3>Remote Careers</h3>
+<p>Explore Work From Home Options</p>
 </a>
 
 </div>
@@ -989,23 +1531,28 @@ onkeyup="searchCompanies()"
 
 <div class="filter-buttons">
 
-<button class="filter-btn active" onclick="filterCategory('all',this)">
+<button class="filter-btn active"
+onclick="filterCategory('all',this)">
 All Companies
 </button>
 
-<button class="filter-btn" onclick="filterCategory('bpo',this)">
+<button class="filter-btn"
+onclick="filterCategory('bpo',this)">
 Customer Service
 </button>
 
-<button class="filter-btn" onclick="filterCategory('contractor',this)">
+<button class="filter-btn"
+onclick="filterCategory('contractor',this)">
 Flexible Work
 </button>
 
-<button class="filter-btn" onclick="filterCategory('healthcare',this)">
+<button class="filter-btn"
+onclick="filterCategory('healthcare',this)">
 Healthcare
 </button>
 
-<button class="filter-btn" onclick="filterCategory('corporate',this)">
+<button class="filter-btn"
+onclick="filterCategory('corporate',this)">
 Corporate & Tech
 </button>
 
@@ -1020,78 +1567,198 @@ Corporate & Tech
 
 <section class="no-phone-section" id="no-phone">
 
-<h2>💬 No-Phone Remote Work Opportunities</h2>
+<div class="no-phone-banner">
 
-<p class="intro">
-Looking for remote work that may involve less or no traditional phone calling?
-Explore companies and career platforms below and look for positions involving
-email support, chat support, messaging, content moderation, data entry,
-online operations, and other written-work opportunities.
-Always read the individual job description carefully because duties and
-phone requirements can vary by position.
+<h2>💬 No-Phone Work From Home Jobs</h2>
+
+<p>
+Looking for work-from-home opportunities that may focus on
+email, chat, messaging, moderation, data, or other non-phone tasks?
+Explore these employer career pages and search for available
+non-phone positions.
 </p>
 
-<div class="company-grid">
+</div>
 
-<a class="no-phone-card" href="https://www.amazon.jobs/en/locations/virtual-locations" target="_blank">
-<h3>💬 Amazon Virtual Careers</h3>
-<p>Explore virtual roles and search for positions that may offer written or online support work.</p>
-<span>View Careers ↗</span>
+
+<div class="no-phone-grid">
+
+
+<a class="no-phone-card"
+href="https://www.amazon.jobs/en/locations/virtual-locations"
+target="_blank">
+
+<div>
+
+<span class="chat-tag">💬 Search Email & Chat Roles</span>
+
+<h3>Amazon Virtual Careers</h3>
+
+<p>
+Explore Amazon's virtual career opportunities. Search the current listings
+for customer service, chat, support, administrative, and other remote roles.
+</p>
+
+</div>
+
+<strong>View Careers ↗</strong>
+
 </a>
 
-<a class="no-phone-card" href="https://www.telusdigital.com/careers" target="_blank">
-<h3>🌐 TELUS Digital</h3>
-<p>Explore digital, AI, data, content, and online support opportunities.</p>
-<span>View Careers ↗</span>
+
+<a class="no-phone-card"
+href="https://www.telusdigital.com/careers"
+target="_blank">
+
+<div>
+
+<span class="chat-tag">💻 Digital Work</span>
+
+<h3>TELUS Digital</h3>
+
+<p>
+Explore digital customer experience, AI, data, content, and technology-related
+opportunities. Availability varies by location and role.
+</p>
+
+</div>
+
+<strong>View Careers ↗</strong>
+
 </a>
 
-<a class="no-phone-card" href="https://www.appen.com/careers/" target="_blank">
-<h3>💻 Appen</h3>
-<p>Explore remote digital and data-related opportunities. Availability varies.</p>
-<span>View Careers ↗</span>
+
+<a class="no-phone-card"
+href="https://www.liveops.com/work-from-home/"
+target="_blank">
+
+<div>
+
+<span class="chat-tag">💬 Customer Support</span>
+
+<h3>Liveops</h3>
+
+<p>
+Explore flexible work opportunities. Review each listing carefully because
+many opportunities may involve phone-based customer service.
+</p>
+
+</div>
+
+<strong>View Opportunities ↗</strong>
+
 </a>
 
-<a class="no-phone-card" href="https://www.welocalize.com/careers/" target="_blank">
-<h3>📝 Welocalize</h3>
-<p>Explore remote language, localization, data, and digital opportunities.</p>
-<span>View Careers ↗</span>
+
+<a class="no-phone-card"
+href="https://www.concentrix.com/careers/"
+target="_blank">
+
+<div>
+
+<span class="chat-tag">💬 Search Chat Roles</span>
+
+<h3>Concentrix</h3>
+
+<p>
+Search current openings for customer experience, digital support, and other
+remote positions. Use the job description to confirm whether a role is non-phone.
+</p>
+
+</div>
+
+<strong>View Careers ↗</strong>
+
 </a>
 
-<a class="no-phone-card" href="https://www.rws.com/careers/" target="_blank">
-<h3>🌍 RWS</h3>
-<p>Explore remote opportunities involving language, technology, and digital services.</p>
-<span>View Careers ↗</span>
+
+<a class="no-phone-card"
+href="https://www.alorica.com/careers/"
+target="_blank">
+
+<div>
+
+<span class="chat-tag">💻 Search Remote Roles</span>
+
+<h3>Alorica</h3>
+
+<p>
+Explore remote opportunities and carefully review each job description
+for chat, email, or non-phone positions.
+</p>
+
+</div>
+
+<strong>View Careers ↗</strong>
+
 </a>
 
-<a class="no-phone-card" href="https://www.clickworker.com/clickworker-job/" target="_blank">
-<h3>⌨️ Clickworker</h3>
-<p>Explore online microtasks and digital work opportunities.</p>
-<span>View Opportunities ↗</span>
+
+<a class="no-phone-card"
+href="https://www.workingnomads.com/remote-jobs"
+target="_blank">
+
+<div>
+
+<span class="chat-tag">🌎 Remote Job Board</span>
+
+<h3>Working Nomads</h3>
+
+<p>
+Browse remote job listings across different categories, including
+customer support, writing, administrative, and technology positions.
+</p>
+
+</div>
+
+<strong>Browse Jobs ↗</strong>
+
 </a>
 
-<a class="no-phone-card" href="https://www.modSquad.com/jobs/" target="_blank">
-<h3>💬 ModSquad</h3>
-<p>Explore digital engagement, moderation, community, and customer experience opportunities.</p>
-<span>View Careers ↗</span>
+
+<a class="no-phone-card"
+href="https://remote.co/remote-jobs/customer-service/"
+target="_blank">
+
+<div>
+
+<span class="chat-tag">💬 Remote Customer Service</span>
+
+<h3>Remote.co</h3>
+
+<p>
+Explore remote customer service opportunities and review individual
+job descriptions for email or chat-based positions.
+</p>
+
+</div>
+
+<strong>Browse Jobs ↗</strong>
+
 </a>
 
-<a class="no-phone-card" href="https://www.workingnomads.com/remote-jobs" target="_blank">
-<h3>🔎 Working Nomads</h3>
-<p>Browse remote job listings and search for email, chat, writing, and non-phone positions.</p>
-<span>Browse Jobs ↗</span>
+
+<a class="no-phone-card"
+href="https://www.indeed.com/q-remote-chat-support-jobs.html"
+target="_blank">
+
+<div>
+
+<span class="chat-tag">💬 Chat Support Search</span>
+
+<h3>Indeed Remote Chat Support</h3>
+
+<p>
+Search for remote chat support positions. Always verify the employer
+and apply through legitimate company career pages when possible.
+</p>
+
+</div>
+
+<strong>Search Jobs ↗</strong>
+
 </a>
 
-<a class="no-phone-card" href="https://remote.co/remote-jobs/" target="_blank">
-<h3>🏡 Remote.co</h3>
-<p>Browse remote job listings and filter for opportunities that match your skills.</p>
-<span>Browse Jobs ↗</span>
-</a>
-
-<a class="no-phone-card" href="https://www.flexjobs.com/" target="_blank">
-<h3>💼 FlexJobs</h3>
-<p>Explore remote and flexible job listings with search options for different career fields.</p>
-<span>Browse Jobs ↗</span>
-</a>
 
 </div>
 
@@ -1108,26 +1775,87 @@ phone requirements can vary by position.
 📚 Work From Home Career Resources
 </h2>
 
+<p class="section-subtitle">
+Helpful resources to prepare for your next remote opportunity.
+</p>
+
 <div class="resource-grid">
 
-<a class="resource-card" href="https://www.usa.gov/resume" target="_blank">
+<a class="resource-card"
+href="https://www.usa.gov/resume"
+target="_blank">
+
 <h3>📝 Resume Help</h3>
-<p>Get help creating or improving your resume.</p>
+
+<p>
+Get help creating or improving your resume before applying.
+</p>
+
 </a>
 
-<a class="resource-card" href="https://www.dol.gov/general/topic/training" target="_blank">
+
+<a class="resource-card"
+href="https://www.dol.gov/general/topic/training"
+target="_blank">
+
 <h3>🎓 Career Training</h3>
-<p>Explore training and career development resources.</p>
+
+<p>
+Explore training and career development resources.
+</p>
+
 </a>
 
-<a class="resource-card" href="https://www.usa.gov/job-search" target="_blank">
+
+<a class="resource-card"
+href="https://www.usa.gov/job-search"
+target="_blank">
+
 <h3>🔎 Job Search Help</h3>
-<p>Explore official job search resources.</p>
+
+<p>
+Explore official job search resources and employment information.
+</p>
+
 </a>
 
-<a class="resource-card" href="https://www.ftc.gov/scams" target="_blank">
+
+<a class="resource-card"
+href="https://www.ftc.gov/scams"
+target="_blank">
+
 <h3>🚨 Scam Awareness</h3>
-<p>Learn how to recognize employment scams.</p>
+
+<p>
+Learn how to recognize and avoid common employment scams.
+</p>
+
+</a>
+
+
+<a class="resource-card"
+href="https://www.dol.gov/general/topic/youthlabor/workers"
+target="_blank">
+
+<h3>💼 Workplace Information</h3>
+
+<p>
+Learn more about workplace rights and employment resources.
+</p>
+
+</a>
+
+
+<a class="resource-card"
+href="https://www.usa.gov/job-training"
+target="_blank">
+
+<h3>💻 Job Skills</h3>
+
+<p>
+Explore resources that can help strengthen your career skills.
+</p>
+
 </a>
 
 </div>
@@ -1136,17 +1864,23 @@ phone requirements can vary by position.
 
 
 <!-- =====================================================
-     CUSTOMER SERVICE
+     BPO DIRECTORY
 ===================================================== -->
 
 <section class="category" id="bpo" data-category="bpo">
 
 <h2 class="category-title">
+
 📞 BPO & Customer Service
-<span>Customer support, call center, technical support, and contact center opportunities</span>
+
+<span>
+Customer support, call center, technical support, and contact center opportunities
+</span>
+
 </h2>
 
 <div class="company-grid">
+
 
 <a class="company-card" href="https://www.ttecjobs.com/en/work-from-home" target="_blank">
 <span class="company-number">#1</span>
@@ -1269,18 +2003,24 @@ phone requirements can vary by position.
 </a>
 
 </div>
+
 </section>
 
 
 <!-- =====================================================
-     FLEXIBLE
+     CONTRACTOR
 ===================================================== -->
 
 <section class="category" id="contractor" data-category="contractor">
 
 <h2 class="category-title">
+
 💻 Contractor & Flexible Work
-<span>Flexible customer service and independent contractor opportunities</span>
+
+<span>
+Flexible customer service and independent contractor opportunities
+</span>
+
 </h2>
 
 <div class="company-grid">
@@ -1328,6 +2068,7 @@ phone requirements can vary by position.
 </a>
 
 </div>
+
 </section>
 
 
@@ -1338,8 +2079,13 @@ phone requirements can vary by position.
 <section class="category" id="healthcare" data-category="healthcare">
 
 <h2 class="category-title">
+
 🏥 Healthcare & Health Insurance
-<span>Healthcare, insurance, scheduling, member services, and support</span>
+
+<span>
+Healthcare, insurance, member services, scheduling, and support opportunities
+</span>
+
 </h2>
 
 <div class="company-grid">
@@ -1410,13 +2156,20 @@ phone requirements can vary by position.
 <span class="apply">Apply Now ↗</span>
 </a>
 
-<a class="company-card" href="https://about.kaiserpermanente.org/careers" target="_blank">
+<a class="company-card" href="https://jobs.cvshealth.com/us/en/search-results?keywords=Aetna+Remote" target="_blank">
 <span class="company-number">#39</span>
+<span class="company-name">Aetna</span>
+<span class="apply">Apply Now ↗</span>
+</a>
+
+<a class="company-card" href="https://about.kaiserpermanente.org/careers" target="_blank">
+<span class="company-number">#40</span>
 <span class="company-name">Kaiser Permanente</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 </div>
+
 </section>
 
 
@@ -1427,127 +2180,139 @@ phone requirements can vary by position.
 <section class="category" id="corporate" data-category="corporate">
 
 <h2 class="category-title">
+
 💼 Corporate, Tech, Finance & Travel
-<span>Technology, banking, finance, travel, retail, and corporate opportunities</span>
+
+<span>
+Technology, banking, finance, travel, retail, and corporate career opportunities
+</span>
+
 </h2>
 
 <div class="company-grid">
 
 <a class="company-card" href="https://www.amazon.jobs/en/locations/virtual-locations" target="_blank">
-<span class="company-number">#40</span>
+<span class="company-number">#41</span>
 <span class="company-name">Amazon</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://jobs.apple.com/en-us/search?team=home-advisor" target="_blank">
-<span class="company-number">#41</span>
+<span class="company-number">#42</span>
 <span class="company-name">Apple</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://jobs.dell.com/remote-jobs" target="_blank">
-<span class="company-number">#42</span>
+<span class="company-number">#43</span>
 <span class="company-name">Dell Technologies</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://careers.microsoft.com/v2/global/en/home.html" target="_blank">
-<span class="company-number">#43</span>
+<span class="company-number">#44</span>
 <span class="company-name">Microsoft</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
+<a class="company-card" href="https://aexp.fourbusiness.com/careers" target="_blank">
+<span class="company-number">#45</span>
+<span class="company-name">American Express</span>
+<span class="apply">Apply Now ↗</span>
+</a>
+
 <a class="company-card" href="https://www.capitalonecareers.com/" target="_blank">
-<span class="company-number">#44</span>
+<span class="company-number">#46</span>
 <span class="company-name">Capital One</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://careers.pnc.com/" target="_blank">
-<span class="company-number">#45</span>
+<span class="company-number">#47</span>
 <span class="company-name">PNC Bank</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://www.wellsfargojobs.com/" target="_blank">
-<span class="company-number">#46</span>
+<span class="company-number">#48</span>
 <span class="company-name">Wells Fargo</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://jobs.fidelity.com/" target="_blank">
-<span class="company-number">#47</span>
+<span class="company-number">#49</span>
 <span class="company-name">Fidelity</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://jobs.schwabjobs.com/" target="_blank">
-<span class="company-number">#48</span>
+<span class="company-number">#50</span>
 <span class="company-name">Charles Schwab</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://www.telusdigital.com/careers" target="_blank">
-<span class="company-number">#49</span>
+<span class="company-number">#51</span>
 <span class="company-name">TELUS Digital</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://jobs.adp.com/" target="_blank">
-<span class="company-number">#50</span>
+<span class="company-number">#52</span>
 <span class="company-name">ADP</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://aquent.com/find-work" target="_blank">
-<span class="company-number">#51</span>
+<span class="company-number">#53</span>
 <span class="company-name">Aquent</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://www.roberthalf.com/us/en/jobs" target="_blank">
-<span class="company-number">#52</span>
+<span class="company-number">#54</span>
 <span class="company-name">Robert Half</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://careers.united.com/" target="_blank">
-<span class="company-number">#53</span>
+<span class="company-number">#55</span>
 <span class="company-name">United Airlines</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://jobs.aa.com/" target="_blank">
-<span class="company-number">#54</span>
+<span class="company-number">#56</span>
 <span class="company-name">American Airlines</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://careers.marriott.com/" target="_blank">
-<span class="company-number">#55</span>
+<span class="company-number">#57</span>
 <span class="company-name">Marriott</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://jobs.hilton.com/" target="_blank">
-<span class="company-number">#56</span>
+<span class="company-number">#58</span>
 <span class="company-name">Hilton</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://www.chewy.com/jobs" target="_blank">
-<span class="company-number">#57</span>
+<span class="company-number">#59</span>
 <span class="company-name">Chewy</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 <a class="company-card" href="https://www.wayfair.com/careers" target="_blank">
-<span class="company-number">#58</span>
+<span class="company-number">#60</span>
 <span class="company-name">Wayfair</span>
 <span class="apply">Apply Now ↗</span>
 </a>
 
 </div>
+
 </section>
 
 
@@ -1562,14 +2327,22 @@ phone requirements can vary by position.
 </h2>
 
 <p class="section-subtitle">
-Your applications are automatically saved in this browser on this device.
+Keep track of the companies you've applied to and your application status.
 </p>
 
 <div class="tracker-form">
 
-<input type="text" id="trackerCompany" placeholder="Company Name">
+<input
+type="text"
+id="trackerCompany"
+placeholder="Company Name"
+>
 
-<input type="text" id="trackerPosition" placeholder="Job Title">
+<input
+type="text"
+id="trackerPosition"
+placeholder="Job Title"
+>
 
 <select id="trackerStatus">
 
@@ -1591,20 +2364,31 @@ Add Application
 
 </div>
 
+<p class="tracker-note">
+💾 Your applications are automatically saved in this browser on this device.
+</p>
+
 <table class="tracker-table">
 
 <thead>
 
 <tr>
+
 <th>Company</th>
+
 <th>Position</th>
+
 <th>Status</th>
+
 <th>Action</th>
+
 </tr>
 
 </thead>
 
-<tbody id="applicationList"></tbody>
+<tbody id="applicationList">
+
+</tbody>
 
 </table>
 
@@ -1617,7 +2401,9 @@ Add Application
 
 <section class="scam-warning">
 
-<h2>🚨 Protect Yourself From Work-From-Home Scams</h2>
+<h2>
+🚨 Protect Yourself From Work-From-Home Scams
+</h2>
 
 <ul>
 
@@ -1659,7 +2445,7 @@ and stay organized throughout their job search.
 </p>
 
 <p>
-Always review the official employer's website for current job openings,
+Remember to always review the official employer's website for the most current job openings,
 location requirements, eligibility requirements, and application instructions.
 </p>
 
@@ -1672,7 +2458,9 @@ location requirements, eligibility requirements, and application instructions.
 
 <section class="contact-section">
 
-<h2>💌 Connect With Joycelyn</h2>
+<h2>
+💌 Connect With Joycelyn
+</h2>
 
 <p>
 Have a question, suggestion, or want to share a work-from-home opportunity?
@@ -1681,7 +2469,7 @@ Have a question, suggestion, or want to share a work-from-home opportunity?
 <div class="contact-buttons">
 
 <a href="mailto:joycelyncooper93@outlook.com">
-📧 Email Me
+📧 Email Joycelyn
 </a>
 
 <a href="https://www.facebook.com/" target="_blank">
@@ -1704,7 +2492,7 @@ Have a question, suggestion, or want to share a work-from-home opportunity?
 <footer class="footer">
 
 <strong>
-✨ Joycelyn's Work From Home Job Hub ✨
+🦋✨ Joycelyn's Work From Home Job Hub ✨🦋
 </strong>
 
 <p>
@@ -1723,16 +2511,16 @@ Always verify current openings and requirements directly with the employer.
 
 </footer>
 
+
 </div>
 
 
-<!-- =====================================================
-     BACK TO TOP
-===================================================== -->
+<!-- BACK TO TOP -->
 
 <button
 id="topButton"
-onclick="window.scrollTo({top:0,behavior:'smooth'})">
+onclick="window.scrollTo({top:0,behavior:'smooth'})"
+>
 ↑
 </button>
 
@@ -1740,30 +2528,38 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 <script>
 
 /* =========================================================
-   SEARCH
+   SEARCH COMPANIES
 ========================================================= */
 
 function searchCompanies() {
 
     let input =
-        document.getElementById("companySearch")
+        document
+        .getElementById("companySearch")
         .value
         .toLowerCase();
 
     let cards =
-        document.querySelectorAll(".company-card");
+        document
+        .querySelectorAll(".company-card");
 
     cards.forEach(function(card) {
 
         let companyName =
-            card.querySelector(".company-name")
+            card
+            .querySelector(".company-name")
             .textContent
             .toLowerCase();
 
-        card.style.display =
-            companyName.includes(input)
-            ? "flex"
-            : "none";
+        if(companyName.includes(input)) {
+
+            card.style.display = "flex";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
 
     });
 
@@ -1777,10 +2573,12 @@ function searchCompanies() {
 function filterCategory(category, button) {
 
     let sections =
-        document.querySelectorAll(".category");
+        document
+        .querySelectorAll(".category");
 
     let buttons =
-        document.querySelectorAll(".filter-btn");
+        document
+        .querySelectorAll(".filter-btn");
 
     buttons.forEach(function(btn) {
 
@@ -1790,6 +2588,7 @@ function filterCategory(category, button) {
 
     button.classList.add("active");
 
+
     sections.forEach(function(section) {
 
         if(category === "all") {
@@ -1798,10 +2597,15 @@ function filterCategory(category, button) {
 
         } else {
 
-            section.style.display =
-                section.dataset.category === category
-                ? "block"
-                : "none";
+            if(section.dataset.category === category) {
+
+                section.style.display = "block";
+
+            } else {
+
+                section.style.display = "none";
+
+            }
 
         }
 
@@ -1812,7 +2616,7 @@ function filterCategory(category, button) {
 
 /* =========================================================
    APPLICATION TRACKER
-   SAVES DATA IN LOCAL STORAGE
+   SAVES APPLICATIONS TO BROWSER STORAGE
 ========================================================= */
 
 let applications =
@@ -1838,10 +2642,12 @@ function displayApplications() {
 
     table.innerHTML = "";
 
+
     applications.forEach(function(app,index) {
 
         let row =
             document.createElement("tr");
+
 
         row.innerHTML = `
 
@@ -1855,7 +2661,8 @@ function displayApplications() {
 
                 <button
                 class="delete-btn"
-                onclick="deleteApplication(${index})">
+                onclick="deleteApplication(${index})"
+                >
 
                 Remove
 
@@ -1864,6 +2671,7 @@ function displayApplications() {
             </td>
 
         `;
+
 
         table.appendChild(row);
 
@@ -1875,17 +2683,20 @@ function displayApplications() {
 function addApplication() {
 
     let company =
-        document.getElementById("trackerCompany")
+        document
+        .getElementById("trackerCompany")
         .value
         .trim();
 
     let position =
-        document.getElementById("trackerPosition")
+        document
+        .getElementById("trackerPosition")
         .value
         .trim();
 
     let status =
-        document.getElementById("trackerStatus")
+        document
+        .getElementById("trackerStatus")
         .value;
 
 
@@ -1916,10 +2727,13 @@ function addApplication() {
     displayApplications();
 
 
-    document.getElementById("trackerCompany")
+    document
+    .getElementById("trackerCompany")
     .value = "";
 
-    document.getElementById("trackerPosition")
+
+    document
+    .getElementById("trackerPosition")
     .value = "";
 
 }
@@ -1929,7 +2743,7 @@ function deleteApplication(index) {
 
     if(
         confirm(
-            "Are you sure you want to remove this application?"
+            "Remove this application from your tracker?"
         )
     ) {
 
@@ -1945,7 +2759,7 @@ function deleteApplication(index) {
 
 
 /* =========================================================
-   SECURITY
+   PROTECT TRACKER TABLE FROM HTML INPUT
 ========================================================= */
 
 function escapeHTML(text) {
@@ -1968,7 +2782,7 @@ displayApplications();
 
 
 /* =========================================================
-   BACK TO TOP
+   BACK TO TOP BUTTON
 ========================================================= */
 
 window.addEventListener(
@@ -1976,15 +2790,18 @@ window.addEventListener(
     function() {
 
         let button =
-            document.getElementById("topButton");
+            document
+            .getElementById("topButton");
 
         if(window.scrollY > 400) {
 
-            button.style.display = "block";
+            button.style.display =
+                "block";
 
         } else {
 
-            button.style.display = "none";
+            button.style.display =
+                "none";
 
         }
 
