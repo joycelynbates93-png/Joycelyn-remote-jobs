@@ -10,7 +10,7 @@
 <style>
 
 /* =========================================================
-   BLACK + GOLD SPARKLY PROFESSIONAL THEME
+   BLACK + GOLD SPARKLE THEME
 ========================================================= */
 
 * {
@@ -25,41 +25,25 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #f8e7b0;
+    color: #f5e7b2;
 
     background:
-        radial-gradient(circle at 10% 15%, rgba(255,215,100,.25) 0 2px, transparent 3px),
-        radial-gradient(circle at 85% 10%, rgba(255,255,255,.35) 0 2px, transparent 3px),
-        radial-gradient(circle at 30% 80%, rgba(255,215,100,.25) 0 2px, transparent 3px),
-        radial-gradient(circle at 75% 70%, rgba(255,255,255,.25) 0 2px, transparent 3px),
-        radial-gradient(circle at 50% 45%, rgba(212,175,55,.08), transparent 35%),
-        linear-gradient(135deg, #050505, #17120a, #050505, #211a0c);
+        radial-gradient(circle at 10% 15%, rgba(255,215,90,.22) 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 10%, rgba(255,255,255,.25) 0 2px, transparent 3px),
+        radial-gradient(circle at 30% 70%, rgba(255,215,90,.18) 0 2px, transparent 3px),
+        radial-gradient(circle at 75% 80%, rgba(255,255,255,.18) 0 2px, transparent 3px),
+        radial-gradient(circle at 50% 40%, rgba(255,215,90,.12) 0 2px, transparent 3px),
+        linear-gradient(135deg, #050505, #111111 45%, #050505);
 
     background-size:
-        110px 110px,
+        90px 90px,
+        140px 140px,
+        120px 120px,
         160px 160px,
-        130px 130px,
-        190px 190px,
-        cover,
+        110px 110px,
         cover;
 
-    background-attachment: fixed;
-
     padding: 30px 15px 60px;
-}
-
-body::before {
-    content: "✦     ✧        ✨       ✦        ✧     ✨       ✦";
-    position: fixed;
-    top: 8%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: rgba(255,215,100,.22);
-    font-size: 28px;
-    letter-spacing: 25px;
-    pointer-events: none;
-    z-index: -1;
 }
 
 .page {
@@ -69,228 +53,109 @@ body::before {
 }
 
 /* =========================================================
-   CUTE BLACK & GOLD CHARACTER-STYLE HERO
+   GOLD SPARKLE EFFECT
+========================================================= */
+
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    color: #f7d774;
+    font-size: 18px;
+    z-index: -1;
+    animation: sparkleFloat 4s infinite ease-in-out;
+}
+
+.sparkle.one {
+    top: 10%;
+    left: 5%;
+}
+
+.sparkle.two {
+    top: 25%;
+    right: 6%;
+    animation-delay: 1s;
+}
+
+.sparkle.three {
+    bottom: 20%;
+    left: 8%;
+    animation-delay: 2s;
+}
+
+.sparkle.four {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes sparkleFloat {
+    0%,100% {
+        opacity: .3;
+        transform: scale(.8) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4) rotate(20deg);
+    }
+}
+
+/* =========================================================
+   HEADER
 ========================================================= */
 
 .hero {
-    position: relative;
     text-align: center;
-
     background:
         linear-gradient(
             145deg,
             rgba(15,15,15,.98),
-            rgba(35,28,15,.98)
+            rgba(28,28,28,.98)
         );
 
     border: 2px solid #d4af37;
-    border-radius: 32px;
+    border-radius: 30px;
 
-    padding: 45px 25px 40px;
+    padding: 45px 20px;
+
     margin-bottom: 20px;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.65),
-        0 0 25px rgba(212,175,55,.18),
-        inset 0 0 30px rgba(212,175,55,.06);
-
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "✦ ✧ ✨ ✧ ✦";
-    display: block;
-    color: #d4af37;
-    font-size: 24px;
-    letter-spacing: 12px;
-    margin-bottom: 12px;
-}
-
-.hero::after {
-    content: "💻  ✨  BLACK GIRL MAGIC  ✨  💻";
-    display: block;
-    margin-top: 20px;
-    color: #e6c65c;
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 2px;
+        0 10px 40px rgba(0,0,0,.7),
+        0 0 25px rgba(212,175,55,.25);
 }
 
 .hero h1 {
     margin: 0;
+
     color: #f5d76e;
+
     font-size: clamp(30px, 5vw, 52px);
-    font-weight: 900;
+
+    font-weight: 800;
+
     text-shadow:
-        0 0 8px rgba(212,175,55,.35),
-        0 3px 0 #000;
+        0 0 10px rgba(212,175,55,.35);
 }
 
 .hero h1::before {
-    content: "✨ ";
+    content: "✦ ";
 }
 
 .hero h1::after {
-    content: " ✨";
+    content: " ✦";
 }
 
 .hero p {
     margin: 18px auto 0;
+
     max-width: 800px;
-    color: #f4ead0;
+
+    color: #eee0a8;
+
     font-size: 17px;
-    line-height: 1.8;
-}
 
-/* =========================================================
-   DECORATIVE WORKSTATION CHARACTER
-========================================================= */
-
-.magic-workspace {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 18px;
-    margin: 25px auto 0;
-    max-width: 500px;
-}
-
-.character {
-    position: relative;
-    width: 125px;
-    height: 145px;
-}
-
-.character-head {
-    position: absolute;
-    width: 68px;
-    height: 72px;
-    left: 28px;
-    top: 5px;
-    background: #6b3f2b;
-    border-radius: 45% 45% 48% 48%;
-    border: 2px solid #d4af37;
-    box-shadow: 0 0 12px rgba(212,175,55,.2);
-}
-
-.character-hair {
-    position: absolute;
-    width: 88px;
-    height: 90px;
-    left: 18px;
-    top: -5px;
-    background: #050505;
-    border-radius: 50% 50% 45% 45%;
-    z-index: -1;
-    border: 2px solid #222;
-}
-
-.character-hair::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 70px;
-    right: -5px;
-    top: 25px;
-    background: #050505;
-    border-radius: 50%;
-}
-
-.eye {
-    position: absolute;
-    width: 8px;
-    height: 10px;
-    background: #050505;
-    border-radius: 50%;
-    top: 34px;
-}
-
-.eye.left {
-    left: 20px;
-}
-
-.eye.right {
-    right: 20px;
-}
-
-.character-smile {
-    position: absolute;
-    width: 22px;
-    height: 10px;
-    border-bottom: 3px solid #d4af37;
-    border-radius: 50%;
-    left: 23px;
-    top: 51px;
-}
-
-.character-body {
-    position: absolute;
-    width: 75px;
-    height: 65px;
-    left: 25px;
-    top: 76px;
-    background: linear-gradient(135deg,#d4af37,#8d6b14);
-    border-radius: 35px 35px 10px 10px;
-    border: 2px solid #f5d76e;
-}
-
-.character-arm {
-    position: absolute;
-    width: 60px;
-    height: 14px;
-    background: #6b3f2b;
-    border-radius: 20px;
-    top: 100px;
-    right: -12px;
-    transform: rotate(12deg);
-}
-
-.laptop {
-    position: relative;
-    width: 210px;
-    height: 135px;
-}
-
-.screen {
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    left: 30px;
-    top: 0;
-    background: #0b0b0b;
-    border: 5px solid #d4af37;
-    border-radius: 10px;
-    box-shadow: 0 0 18px rgba(212,175,55,.35);
-}
-
-.screen::before {
-    content: "WFH";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 30px;
-    text-align: center;
-    color: #f5d76e;
-    font-size: 22px;
-    font-weight: 900;
-}
-
-.screen::after {
-    content: "✨";
-    position: absolute;
-    right: 12px;
-    bottom: 8px;
-}
-
-.keyboard {
-    position: absolute;
-    bottom: 8px;
-    left: 5px;
-    width: 200px;
-    height: 20px;
-    background: linear-gradient(135deg,#d4af37,#8d6b14);
-    transform: skewX(-20deg);
-    border-radius: 4px;
+    line-height: 1.7;
 }
 
 /* =========================================================
@@ -307,29 +172,43 @@ body::before {
 
 .quick-nav a {
     text-decoration: none;
-    color: #0a0a0a;
-    background: linear-gradient(135deg,#f5d76e,#b8860b);
+
+    color: #111;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7d774,
+            #d4af37,
+            #f8e7a8
+        );
+
     padding: 12px 20px;
+
     border-radius: 50px;
+
     font-weight: 800;
+
     font-size: 14px;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,.45),
-        0 0 10px rgba(212,175,55,.15);
+        0 5px 15px rgba(0,0,0,.5),
+        0 0 10px rgba(212,175,55,.2);
 
     transition: .3s;
 }
 
 .quick-nav a:hover {
-    transform: translateY(-3px) scale(1.03);
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
     box-shadow:
-        0 8px 22px rgba(0,0,0,.65),
-        0 0 18px rgba(212,175,55,.5);
+        0 8px 20px rgba(212,175,55,.4);
 }
 
 /* =========================================================
-   SECTIONS
+   GENERAL WHITE/DARK SECTIONS
 ========================================================= */
 
 .featured-section,
@@ -338,73 +217,105 @@ body::before {
 .category,
 .tracker-section,
 .about-section {
+
     background:
         linear-gradient(
             145deg,
-            rgba(15,15,15,.97),
-            rgba(28,23,14,.97)
+            rgba(20,20,20,.98),
+            rgba(10,10,10,.98)
         );
 
-    border: 1px solid rgba(212,175,55,.55);
+    border:
+        1px solid rgba(212,175,55,.65);
+
     border-radius: 25px;
 
     padding: 25px;
+
     margin: 25px 0;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.55),
+        0 8px 30px rgba(0,0,0,.6),
         inset 0 0 25px rgba(212,175,55,.03);
 }
 
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
 .section-heading {
     text-align: center;
+
     color: #f5d76e;
+
     margin-top: 0;
-    font-size: 26px;
-    text-shadow: 0 0 10px rgba(212,175,55,.2);
+
+    font-size: 27px;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,.2);
 }
 
 .section-subtitle {
     text-align: center;
-    color: #d8c58d;
+
+    color: #d8c47c;
+
     margin-bottom: 22px;
 }
 
 /* =========================================================
-   FEATURED CARDS
+   FEATURED EMPLOYERS
 ========================================================= */
 
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
+
     gap: 15px;
 }
 
 .featured-card {
     text-align: center;
+
     padding: 20px;
+
     border-radius: 18px;
 
     background:
-        linear-gradient(145deg,#181818,#2a2110);
+        linear-gradient(
+            145deg,
+            #181818,
+            #252525
+        );
 
-    border: 1px solid #b8860b;
+    border:
+        1px solid #b9972e;
 
     text-decoration: none;
-    color: #f5d76e;
+
+    color: #f5e7b2;
 
     transition: .3s;
 }
 
 .featured-card:hover {
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
+
     background:
-        linear-gradient(145deg,#d4af37,#8d6b14);
-    color: #050505;
+        linear-gradient(
+            145deg,
+            #d4af37,
+            #8f7420
+        );
+
+    color: #111;
 
     box-shadow:
-        0 10px 25px rgba(0,0,0,.5),
-        0 0 18px rgba(212,175,55,.4);
+        0 10px 25px rgba(212,175,55,.35);
 }
 
 .featured-icon {
@@ -419,106 +330,169 @@ body::before {
    SEARCH
 ========================================================= */
 
+.search-box {
+    text-align: center;
+}
+
 .search-box h2 {
     margin-top: 0;
+
     color: #f5d76e;
 }
 
 #companySearch {
+
     width: 100%;
+
     max-width: 650px;
 
     padding: 16px 20px;
 
-    border: 2px solid #d4af37;
+    border:
+        2px solid #d4af37;
+
     border-radius: 50px;
 
     outline: none;
 
     font-size: 16px;
 
-    color: #f5e6b3;
+    color: #fff;
 
-    background: #080808;
-}
-
-#companySearch::placeholder {
-    color: #a9986b;
+    background: #111;
 }
 
 #companySearch:focus {
+
+    border-color: #f7d774;
+
     box-shadow:
-        0 0 15px rgba(212,175,55,.35);
+        0 0 15px rgba(212,175,55,.3);
 }
 
 /* =========================================================
-   FILTER BUTTONS
+   FILTERS
 ========================================================= */
 
 .filter-buttons {
+
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 10px;
+
     margin-top: 18px;
 }
 
 .filter-btn {
-    border: 1px solid #b8860b;
-    padding: 10px 18px;
+
+    border:
+        1px solid #b9972e;
+
+    padding:
+        10px 18px;
+
     border-radius: 50px;
 
-    background: #181818;
-    color: #f5d76e;
+    background:
+        #181818;
 
-    font-weight: 700;
-    cursor: pointer;
-    transition: .3s;
+    color:
+        #f5d76e;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        .3s;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: linear-gradient(135deg,#f5d76e,#b8860b);
-    color: #080808;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f7d774
+        );
+
+    color:
+        #111;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,.5);
+        0 5px 15px
+        rgba(212,175,55,.25);
 }
 
 /* =========================================================
-   RESOURCE CARDS
+   RESOURCES
 ========================================================= */
 
 .resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 15px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:
+        15px;
 }
 
 .resource-card {
-    background: linear-gradient(145deg,#171717,#28200f);
 
-    border: 1px solid #b8860b;
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #242424
+        );
 
-    border-radius: 18px;
-    padding: 20px;
+    border:
+        1px solid #b9972e;
 
-    text-decoration: none;
-    color: #f3df9b;
+    border-radius:
+        18px;
 
-    transition: .3s;
+    padding:
+        20px;
+
+    text-decoration:
+        none;
+
+    color:
+        #eee0a8;
+
+    transition:
+        .3s;
 }
 
 .resource-card:hover {
-    transform: translateY(-5px);
+
+    transform:
+        translateY(-5px);
 
     background:
-        linear-gradient(145deg,#d4af37,#8d6b14);
+        linear-gradient(
+            145deg,
+            #d4af37,
+            #8f7420
+        );
 
-    color: #050505;
+    color:
+        #111;
 
     box-shadow:
-        0 10px 20px rgba(0,0,0,.5);
+        0 10px 20px
+        rgba(212,175,55,.3);
 }
 
 .resource-card h3 {
@@ -530,18 +504,36 @@ body::before {
 ========================================================= */
 
 .category-title {
-    text-align: center;
-    color: #f5d76e;
-    font-size: 24px;
-    margin: 0 0 20px;
+
+    text-align:
+        center;
+
+    color:
+        #f5d76e;
+
+    font-size:
+        25px;
+
+    margin:
+        0 0 20px;
 }
 
 .category-title span {
-    display: block;
-    font-size: 13px;
-    color: #bdaa7a;
-    font-weight: 400;
-    margin-top: 5px;
+
+    display:
+        block;
+
+    font-size:
+        13px;
+
+    color:
+        #cdbb70;
+
+    font-weight:
+        400;
+
+    margin-top:
+        5px;
 }
 
 /* =========================================================
@@ -549,162 +541,369 @@ body::before {
 ========================================================= */
 
 .company-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-    gap: 15px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+
+    gap:
+        15px;
 }
 
 .company-card {
-    position: relative;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position:
+        relative;
 
-    min-height: 125px;
-    padding: 18px;
+    display:
+        flex;
 
-    text-decoration: none;
-    color: #f2dda0;
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    min-height:
+        125px;
+
+    padding:
+        18px;
+
+    text-decoration:
+        none;
+
+    color:
+        #eee0a8;
 
     background:
-        linear-gradient(145deg,#111111,#28200f);
+        linear-gradient(
+            145deg,
+            #151515,
+            #242424
+        );
 
-    border: 1px solid #a88320;
-    border-radius: 18px;
+    border:
+        1px solid #b9972e;
 
-    overflow: hidden;
-    transition: all .3s ease;
+    border-radius:
+        18px;
+
+    overflow:
+        hidden;
+
+    transition:
+        all .3s ease;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,.45);
+        0 5px 12px
+        rgba(0,0,0,.5);
 }
 
 .company-card::before {
-    content: "✦";
 
-    position: absolute;
-    right: 12px;
-    top: 8px;
+    content:
+        "✦";
 
-    color: #f5d76e;
-    font-size: 18px;
+    position:
+        absolute;
+
+    right:
+        12px;
+
+    top:
+        8px;
+
+    color:
+        #f5d76e;
+
+    font-size:
+        18px;
 }
 
 .company-card:hover {
+
     transform:
         translateY(-6px)
         scale(1.02);
 
     background:
-        linear-gradient(145deg,#d4af37,#8d6b14);
+        linear-gradient(
+            145deg,
+            #d4af37,
+            #8f7420
+        );
 
-    border-color: #f5d76e;
+    border-color:
+        #f7d774;
 
-    color: #050505;
+    color:
+        #111;
 
     box-shadow:
-        0 12px 25px rgba(0,0,0,.65),
-        0 0 15px rgba(212,175,55,.45);
+        0 12px 25px
+        rgba(212,175,55,.35);
 }
 
 .company-number {
-    font-size: 12px;
-    color: #bfa653;
-    font-weight: 700;
+
+    font-size:
+        12px;
+
+    color:
+        #c8a93a;
+
+    font-weight:
+        700;
 }
 
-.company-card:hover .company-number {
-    color: #201806;
+.company-card:hover
+.company-number {
+
+    color:
+        #111;
 }
 
 .company-name {
-    font-size: 17px;
-    font-weight: 800;
-    margin: 7px 0;
+
+    font-size:
+        17px;
+
+    font-weight:
+        800;
+
+    margin:
+        7px 0;
 }
 
 .apply {
-    font-size: 13px;
-    font-weight: 700;
-    color: #e5c85b;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    color:
+        #f5d76e;
 }
 
-.company-card:hover .apply {
-    color: #050505;
+.company-card:hover
+.apply {
+
+    color:
+        #111;
 }
 
 /* =========================================================
-   APPLICATION TRACKER
+   NO PHONE JOBS
+========================================================= */
+
+.no-phone-section {
+
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #080808
+        );
+
+    border:
+        2px solid #d4af37;
+
+    border-radius:
+        25px;
+
+    padding:
+        30px;
+
+    margin:
+        30px 0;
+
+    box-shadow:
+        0 0 25px
+        rgba(212,175,55,.12);
+}
+
+.no-phone-badge {
+
+    display:
+        inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f7d774
+        );
+
+    color:
+        #111;
+
+    padding:
+        8px 16px;
+
+    border-radius:
+        50px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        12px;
+}
+
+.no-phone-note {
+
+    text-align:
+        center;
+
+    color:
+        #d8c47c;
+
+    line-height:
+        1.7;
+
+    max-width:
+        800px;
+
+    margin:
+        0 auto 25px;
+}
+
+/* =========================================================
+   TRACKER
 ========================================================= */
 
 .tracker-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-    gap: 10px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(180px,1fr));
+
+    gap:
+        10px;
 }
 
 .tracker-form input,
 .tracker-form select {
-    width: 100%;
-    padding: 12px;
 
-    border-radius: 10px;
-    border: 1px solid #b8860b;
+    width:
+        100%;
 
-    outline: none;
+    padding:
+        12px;
 
-    background: #090909;
-    color: #f5d76e;
+    border-radius:
+        10px;
+
+    border:
+        1px solid #b9972e;
+
+    outline:
+        none;
+
+    background:
+        #111;
+
+    color:
+        #fff;
 }
 
 .tracker-form button {
-    border: none;
-    border-radius: 10px;
 
-    background: linear-gradient(135deg,#f5d76e,#b8860b);
+    border:
+        none;
 
-    color: #080808;
+    border-radius:
+        10px;
 
-    font-weight: 800;
-    cursor: pointer;
-    padding: 12px;
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f7d774
+        );
+
+    color:
+        #111;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    padding:
+        12px;
 }
 
 .tracker-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
+
+    width:
+        100%;
+
+    margin-top:
+        20px;
+
+    border-collapse:
+        collapse;
 }
 
 .tracker-table th,
 .tracker-table td {
-    padding: 12px;
-    border-bottom: 1px solid #4c3b18;
-    text-align: left;
+
+    padding:
+        12px;
+
+    border-bottom:
+        1px solid #4b3c15;
+
+    text-align:
+        left;
 }
 
 .tracker-table th {
-    background: #2a210e;
-    color: #f5d76e;
+
+    background:
+        #2a2412;
+
+    color:
+        #f5d76e;
+}
+
+.tracker-table td {
+
+    color:
+        #eee0a8;
 }
 
 .delete-btn {
-    border: none;
-    background: #d4af37;
-    color: #080808;
 
-    padding: 6px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 700;
-}
+    border:
+        none;
 
-.save-message {
-    text-align: center;
-    color: #d4af37;
-    font-size: 13px;
-    margin-top: 12px;
+    background:
+        #4b3c15;
+
+    color:
+        #f7d774;
+
+    padding:
+        6px 10px;
+
+    border-radius:
+        8px;
+
+    cursor:
+        pointer;
 }
 
 /* =========================================================
@@ -712,35 +911,53 @@ body::before {
 ========================================================= */
 
 .scam-warning {
+
     background:
         linear-gradient(
             135deg,
-            #211b0e,
-            #0d0d0d
+            #211b0d,
+            #121212
         );
 
     border:
-        2px solid #b8860b;
+        2px solid #d4af37;
 
-    border-radius: 25px;
+    border-radius:
+        25px;
 
-    padding: 25px;
-    margin: 30px 0;
+    padding:
+        25px;
+
+    margin:
+        30px 0;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.5);
+        0 8px 25px
+        rgba(0,0,0,.5);
 }
 
 .scam-warning h2 {
-    color: #f5d76e;
-    text-align: center;
+
+    color:
+        #f5d76e;
+
+    text-align:
+        center;
 }
 
 .scam-warning ul {
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-    color: #ead9a3;
+
+    max-width:
+        800px;
+
+    margin:
+        auto;
+
+    line-height:
+        1.8;
+
+    color:
+        #eee0a8;
 }
 
 /* =========================================================
@@ -748,14 +965,24 @@ body::before {
 ========================================================= */
 
 .about-section {
-    text-align: center;
+
+    text-align:
+        center;
 }
 
 .about-section p {
-    max-width: 800px;
-    margin: 10px auto;
-    line-height: 1.8;
-    color: #dbc993;
+
+    max-width:
+        800px;
+
+    margin:
+        10px auto;
+
+    line-height:
+        1.8;
+
+    color:
+        #d8c47c;
 }
 
 /* =========================================================
@@ -763,51 +990,91 @@ body::before {
 ========================================================= */
 
 .contact-section {
+
     background:
         linear-gradient(
             135deg,
             #d4af37,
-            #8d6b14,
+            #8f7420,
             #d4af37
         );
 
-    color: #080808;
+    color:
+        #111;
 
-    border-radius: 25px;
-    padding: 30px;
-    margin: 30px 0;
+    border-radius:
+        25px;
 
-    text-align: center;
+    padding:
+        30px;
+
+    margin:
+        30px 0;
+
+    text-align:
+        center;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.6);
+        0 10px 30px
+        rgba(0,0,0,.5);
+}
+
+.contact-section h2 {
+
+    color:
+        #111;
 }
 
 .contact-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 20px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
+    margin-top:
+        20px;
 }
 
 .contact-buttons a {
-    text-decoration: none;
 
-    background: #080808;
-    color: #f5d76e;
+    text-decoration:
+        none;
 
-    padding: 12px 22px;
-    border-radius: 50px;
+    background:
+        #111;
 
-    font-weight: 800;
-    transition: .3s;
+    color:
+        #f5d76e;
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        50px;
+
+    font-weight:
+        800;
+
+    transition:
+        .3s;
 }
 
 .contact-buttons a:hover {
-    transform: translateY(-3px);
+
+    transform:
+        translateY(-3px);
+
     box-shadow:
-        0 8px 15px rgba(0,0,0,.5);
+        0 8px 15px
+        rgba(0,0,0,.35);
 }
 
 /* =========================================================
@@ -815,15 +1082,27 @@ body::before {
 ========================================================= */
 
 .footer {
-    text-align: center;
-    color: #d9c27d;
-    padding: 30px 15px;
-    font-size: 15px;
+
+    text-align:
+        center;
+
+    color:
+        #d8c47c;
+
+    padding:
+        30px 15px;
+
+    font-size:
+        15px;
 }
 
 .footer strong {
-    font-size: 20px;
-    color: #f5d76e;
+
+    font-size:
+        20px;
+
+    color:
+        #f5d76e;
 }
 
 /* =========================================================
@@ -831,31 +1110,56 @@ body::before {
 ========================================================= */
 
 #topButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
 
-    width: 50px;
-    height: 50px;
+    position:
+        fixed;
 
-    border: 2px solid #f5d76e;
-    border-radius: 50%;
+    bottom:
+        20px;
+
+    right:
+        20px;
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    border:
+        1px solid #f7d774;
+
+    border-radius:
+        50%;
 
     background:
-        linear-gradient(135deg,#d4af37,#8d6b14);
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #8f7420
+        );
 
-    color: #080808;
+    color:
+        #111;
 
-    font-size: 22px;
-    font-weight: bold;
+    font-size:
+        22px;
 
-    cursor: pointer;
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,.65);
+        0 5px 20px
+        rgba(0,0,0,.5);
 
-    display: none;
-    z-index: 1000;
+    display:
+        none;
+
+    z-index:
+        1000;
 }
 
 /* =========================================================
@@ -865,46 +1169,64 @@ body::before {
 @media(max-width:600px) {
 
     body {
-        padding: 15px 10px 50px;
+
+        padding:
+            15px
+            10px
+            50px;
     }
 
     .hero {
-        padding: 30px 15px;
+
+        padding:
+            30px
+            15px;
     }
 
     .hero h1 {
-        font-size: 30px;
+
+        font-size:
+            30px;
     }
 
     .hero p {
-        font-size: 15px;
-    }
 
-    .magic-workspace {
-        transform: scale(.85);
-        margin-left: -30px;
-        margin-right: -30px;
+        font-size:
+            15px;
     }
 
     .category,
     .featured-section,
     .resources-section,
-    .tracker-section {
-        padding: 18px;
+    .tracker-section,
+    .no-phone-section {
+
+        padding:
+            18px;
     }
 
     .company-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .company-card {
-        min-height: 110px;
+
+        min-height:
+            110px;
     }
 
     .tracker-table {
-        display: block;
-        overflow-x: auto;
-        font-size: 13px;
+
+        font-size:
+            13px;
+
+        display:
+            block;
+
+        overflow-x:
+            auto;
     }
 }
 
@@ -914,10 +1236,17 @@ body::before {
 
 <body>
 
+<!-- SPARKLES -->
+
+<div class="sparkle one">✦</div>
+<div class="sparkle two">✧</div>
+<div class="sparkle three">✦</div>
+<div class="sparkle four">✧</div>
+
 <div class="page">
 
 <!-- =====================================================
-     MAIN HEADER
+     HEADER
 ===================================================== -->
 
 <section class="hero">
@@ -926,40 +1255,9 @@ body::before {
 
 <p>
 Welcome to your one-stop destination for discovering work-from-home career opportunities!
-Browse trusted employers, explore job categories, find helpful career resources,
-and keep track of the jobs you apply for—all in one place. 💕
+Browse trusted employers, explore job categories, discover no-phone opportunities,
+find helpful career resources, and keep track of the jobs you apply for—all in one place. ✨
 </p>
-
-<div class="magic-workspace">
-
-<div class="character">
-
-<div class="character-hair"></div>
-
-<div class="character-head">
-
-<div class="eye left"></div>
-<div class="eye right"></div>
-
-<div class="character-smile"></div>
-
-</div>
-
-<div class="character-body"></div>
-
-<div class="character-arm"></div>
-
-</div>
-
-<div class="laptop">
-
-<div class="screen"></div>
-
-<div class="keyboard"></div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -969,21 +1267,21 @@ and keep track of the jobs you apply for—all in one place. 💕
 
 <nav class="quick-nav">
 
-<a href="#featured">⭐ Featured Jobs</a>
+<a href="#featured">✦ Featured Jobs</a>
 
-<a href="#bpo">📞 Customer Service</a>
+<a href="#bpo">☎ Customer Service</a>
 
 <a href="#contractor">💻 Flexible Work</a>
-
-<a href="#nonphone">💬 No-Phone Jobs</a>
 
 <a href="#healthcare">🏥 Healthcare</a>
 
 <a href="#corporate">💼 Corporate</a>
 
+<a href="#no-phone">💬 No-Phone Jobs</a>
+
 <a href="#resources">📚 Resources</a>
 
-<a href="#tracker">📊 Application Tracker</a>
+<a href="#tracker">📊 Tracker</a>
 
 </nav>
 
@@ -994,7 +1292,7 @@ and keep track of the jobs you apply for—all in one place. 💕
 <section class="featured-section" id="featured">
 
 <h2 class="section-heading">
-⭐ Featured Work From Home Employers
+✦ Featured Work From Home Employers
 </h2>
 
 <p class="section-subtitle">
@@ -1007,7 +1305,7 @@ Explore popular employers and visit their official career pages to view current 
 href="https://www.ttecjobs.com/en/work-from-home"
 target="_blank">
 
-<div class="featured-icon">📞</div>
+<div class="featured-icon">☎</div>
 
 <h3>TTEC</h3>
 
@@ -1110,16 +1408,132 @@ onclick="filterCategory('contractor',this)">
 Flexible Work </button>
 
 <button class="filter-btn"
-onclick="filterCategory('nonphone',this)">
-No-Phone Jobs </button>
-
-<button class="filter-btn"
 onclick="filterCategory('healthcare',this)">
 Healthcare </button>
 
 <button class="filter-btn"
 onclick="filterCategory('corporate',this)">
 Corporate & Tech </button>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     NO PHONE JOBS
+===================================================== -->
+
+<section class="no-phone-section" id="no-phone">
+
+<h2 class="section-heading">
+💬 Remote Jobs With Potential No-Phone Opportunities
+</h2>
+
+<p class="no-phone-note">
+Looking for remote work that may involve email, chat, messaging, content moderation,
+data-related work, or other non-phone tasks? Browse these employer career pages and
+search their current openings for terms such as <strong>"chat support"</strong>,
+<strong>"email support"</strong>, <strong>"non-voice"</strong>, <strong>"content moderation"</strong>,
+or <strong>"back office."</strong>
+</p>
+
+<div class="company-grid">
+
+<a class="company-card"
+href="https://www.telusdigital.com/careers"
+target="_blank">
+
+<span class="company-number">NO-PHONE OPTION #1</span>
+
+<span class="company-name">
+TELUS Digital
+</span>
+
+<span class="apply">
+Search Non-Phone Roles ↗
+</span>
+
+</a>
+
+<a class="company-card"
+href="https://jobs.foundever.com/content/Find-a-Job/"
+target="_blank">
+
+<span class="company-number">NO-PHONE OPTION #2</span>
+
+<span class="company-name">
+Foundever
+</span>
+
+<span class="apply">
+Search Chat & Digital Roles ↗
+</span>
+
+</a>
+
+<a class="company-card"
+href="https://jobs.concentrix.com/job-search/"
+target="_blank">
+
+<span class="company-number">NO-PHONE OPTION #3</span>
+
+<span class="company-name">
+Concentrix
+</span>
+
+<span class="apply">
+Search Digital Roles ↗
+</span>
+
+</a>
+
+<a class="company-card"
+href="https://www.amazon.jobs/en/locations/virtual-locations"
+target="_blank">
+
+<span class="company-number">NO-PHONE OPTION #4</span>
+
+<span class="company-name">
+Amazon
+</span>
+
+<span class="apply">
+Search Virtual Roles ↗
+</span>
+
+</a>
+
+<a class="company-card"
+href="https://www.indeed.com/q-chat-support-remote-jobs.html"
+target="_blank">
+
+<span class="company-number">NO-PHONE SEARCH</span>
+
+<span class="company-name">
+Remote Chat Support Jobs
+</span>
+
+<span class="apply">
+View Current Listings ↗
+</span>
+
+</a>
+
+<a class="company-card"
+href="https://www.indeed.com/q-email-support-remote-jobs.html"
+target="_blank">
+
+<span class="company-number">NO-PHONE SEARCH</span>
+
+<span class="company-name">
+Remote Email Support Jobs
+</span>
+
+<span class="apply">
+View Current Listings ↗
+</span>
+
+</a>
 
 </div>
 
@@ -1225,7 +1639,7 @@ Explore resources that can help strengthen your career skills.
 
 <h2 class="category-title">
 
-📞 BPO & Customer Service
+☎ BPO & Customer Service
 
 <span>
 Customer support, call center, technical support, and contact center opportunities
@@ -1417,88 +1831,6 @@ Flexible customer service and independent contractor opportunities
 <span class="company-number">#27</span>
 <span class="company-name">Kelly Services</span>
 <span class="apply">Apply Now ↗</span>
-</a>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     NEW NO-PHONE REMOTE JOBS
-===================================================== -->
-
-<section class="category" id="nonphone" data-category="nonphone">
-
-<h2 class="category-title">
-
-💬 No-Phone Remote Work
-
-<span>
-Look for remote opportunities involving email, chat, messaging, moderation, data, and online support. Always check the individual job description because duties and phone requirements can change.
-</span>
-
-</h2>
-
-<div class="company-grid">
-
-<a class="company-card" href="https://www.liveperson.com/careers/" target="_blank">
-<span class="company-number">#61</span>
-<span class="company-name">LivePerson</span>
-<span class="apply">Explore Careers ↗</span>
-</a>
-
-<a class="company-card" href="https://www.modSquad.com/careers/" target="_blank">
-<span class="company-number">#62</span>
-<span class="company-name">ModSquad</span>
-<span class="apply">Explore Careers ↗</span>
-</a>
-
-<a class="company-card" href="https://www.telusdigital.com/careers" target="_blank">
-<span class="company-number">#63</span>
-<span class="company-name">TELUS Digital</span>
-<span class="apply">Explore Careers ↗</span>
-</a>
-
-<a class="company-card" href="https://www.appen.com/careers/" target="_blank">
-<span class="company-number">#64</span>
-<span class="company-name">Appen</span>
-<span class="apply">Explore Careers ↗</span>
-</a>
-
-<a class="company-card" href="https://www.clickworker.com/clickworker-job/" target="_blank">
-<span class="company-number">#65</span>
-<span class="company-name">Clickworker</span>
-<span class="apply">Explore Work ↗</span>
-</a>
-
-<a class="company-card" href="https://www.rev.com/freelancers" target="_blank">
-<span class="company-number">#66</span>
-<span class="company-name">Rev</span>
-<span class="apply">Explore Opportunities ↗</span>
-</a>
-
-<a class="company-card" href="https://www.grammarly.com/jobs" target="_blank">
-<span class="company-number">#67</span>
-<span class="company-name">Grammarly</span>
-<span class="apply">Explore Careers ↗</span>
-</a>
-
-<a class="company-card" href="https://www.flexjobs.com/" target="_blank">
-<span class="company-number">#68</span>
-<span class="company-name">FlexJobs</span>
-<span class="apply">Explore Remote Jobs ↗</span>
-</a>
-
-<a class="company-card" href="https://www.indeed.com/q-remote-chat-support-jobs.html" target="_blank">
-<span class="company-number">#69</span>
-<span class="company-name">Indeed — Remote Chat Support</span>
-<span class="apply">Search Jobs ↗</span>
-</a>
-
-<a class="company-card" href="https://www.linkedin.com/jobs/search/?keywords=remote%20chat%20support" target="_blank">
-<span class="company-number">#70</span>
-<span class="company-name">LinkedIn — Remote Chat Support</span>
-<span class="apply">Search Jobs ↗</span>
 </a>
 
 </div>
@@ -1758,8 +2090,7 @@ Technology, banking, finance, travel, retail, and corporate career opportunities
 </h2>
 
 <p class="section-subtitle">
-Keep track of the companies you've applied to and your application status.
-Your applications are automatically saved in this browser.
+Your applications are saved automatically on this device and browser.
 </p>
 
 <div class="tracker-form">
@@ -1780,25 +2111,15 @@ placeholder="Job Title"
 
 <select id="trackerStatus">
 
-<option value="Applied">
-Applied
-</option>
+<option value="Applied">Applied</option>
 
-<option value="Interview">
-Interview
-</option>
+<option value="Interview">Interview</option>
 
-<option value="Assessment">
-Assessment
-</option>
+<option value="Assessment">Assessment</option>
 
-<option value="Offer">
-Offer
-</option>
+<option value="Offer">Offer</option>
 
-<option value="Rejected">
-Not Selected
-</option>
+<option value="Rejected">Not Selected</option>
 
 </select>
 
@@ -1807,10 +2128,6 @@ Add Application
 </button>
 
 </div>
-
-<p class="save-message">
-💾 Your application tracker saves automatically on this device.
-</p>
 
 <table class="tracker-table">
 
@@ -1867,13 +2184,13 @@ Add Application
 </section>
 
 <!-- =====================================================
-     ABOUT JOYCELYN
+     ABOUT
 ===================================================== -->
 
 <section class="about-section">
 
 <h2 class="section-heading">
-💕 About Joycelyn's Work From Home Job Hub
+✦ About Joycelyn's Work From Home Job Hub
 </h2>
 
 <p>
@@ -1910,7 +2227,7 @@ Have a question, suggestion, or want to share a work-from-home opportunity?
 <div class="contact-buttons">
 
 <a href="mailto:joycelyncooper93@outlook.com">
-📧 Email Me
+📧 Email Joycelyn
 </a>
 
 <a href="https://www.facebook.com/" target="_blank">
@@ -1932,7 +2249,7 @@ Have a question, suggestion, or want to share a work-from-home opportunity?
 <footer class="footer">
 
 <strong>
-✨ Joycelyn's Work From Home Job Hub ✨
+✦ Joycelyn's Work From Home Job Hub ✦
 </strong>
 
 <p>
@@ -2056,68 +2373,24 @@ function filterCategory(category, button) {
 
 /* =========================================================
    APPLICATION TRACKER
-   SAVES APPLICATIONS TO BROWSER STORAGE
+   SAVES DATA IN BROWSER LOCAL STORAGE
 ========================================================= */
 
-let applications =
-    JSON.parse(
-        localStorage.getItem("joycelynJobApplications")
-    ) || [];
+function getApplications() {
 
-
-function saveApplications() {
-
-    localStorage.setItem(
-        "joycelynJobApplications",
-        JSON.stringify(applications)
+    return JSON.parse(
+        localStorage.getItem("joycelynApplications") || "[]"
     );
 
 }
 
 
-function displayApplications() {
+function saveApplications(applications) {
 
-    let table =
-        document
-        .getElementById("applicationList");
-
-    table.innerHTML = "";
-
-
-    applications.forEach(function(application, index) {
-
-        let row =
-            document
-            .createElement("tr");
-
-
-        row.innerHTML = `
-
-            <td>${escapeHTML(application.company)}</td>
-
-            <td>${escapeHTML(application.position)}</td>
-
-            <td>${escapeHTML(application.status)}</td>
-
-            <td>
-
-                <button
-                class="delete-btn"
-                onclick="deleteApplication(${index})"
-                >
-
-                Remove
-
-                </button>
-
-            </td>
-
-        `;
-
-
-        table.appendChild(row);
-
-    });
+    localStorage.setItem(
+        "joycelynApplications",
+        JSON.stringify(applications)
+    );
 
 }
 
@@ -2153,20 +2426,27 @@ function addApplication() {
     }
 
 
+    let applications =
+        getApplications();
+
+
     applications.push({
 
-        company: company,
+        company:
+            company,
 
-        position: position,
+        position:
+            position,
 
-        status: status
+        status:
+            status
 
     });
 
 
-    saveApplications();
-
-    displayApplications();
+    saveApplications(
+        applications
+    );
 
 
     document
@@ -2178,31 +2458,103 @@ function addApplication() {
     .getElementById("trackerPosition")
     .value = "";
 
-}
-
-
-function deleteApplication(index) {
-
-    applications.splice(index, 1);
-
-    saveApplications();
 
     displayApplications();
 
 }
 
 
-/* =========================================================
-   SECURITY
-   PREVENTS HTML FROM BEING INSERTED INTO TRACKER
-========================================================= */
+function deleteApplication(index) {
+
+    let applications =
+        getApplications();
+
+
+    applications.splice(
+        index,
+        1
+    );
+
+
+    saveApplications(
+        applications
+    );
+
+
+    displayApplications();
+
+}
+
+
+function displayApplications() {
+
+    let applications =
+        getApplications();
+
+
+    let table =
+        document
+        .getElementById("applicationList");
+
+
+    table.innerHTML = "";
+
+
+    applications.forEach(
+        function(app,index) {
+
+            let row =
+                document
+                .createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${escapeHTML(app.company)}
+                </td>
+
+                <td>
+                    ${escapeHTML(app.position)}
+                </td>
+
+                <td>
+                    ${escapeHTML(app.status)}
+                </td>
+
+                <td>
+
+                    <button
+                    class="delete-btn"
+                    onclick="deleteApplication(${index})"
+                    >
+
+                    Remove
+
+                    </button>
+
+                </td>
+
+            `;
+
+
+            table.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
 
 function escapeHTML(text) {
 
     let div =
         document.createElement("div");
 
-    div.textContent = text;
+    div.textContent =
+        text;
 
     return div.innerHTML;
 
@@ -2234,6 +2586,7 @@ window.addEventListener(
         let button =
             document
             .getElementById("topButton");
+
 
         if(window.scrollY > 400) {
 
