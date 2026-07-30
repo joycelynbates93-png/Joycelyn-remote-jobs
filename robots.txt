@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joycelynbates93-png.github.io/Joycelyn-remote-jobs/sitemap.xml
